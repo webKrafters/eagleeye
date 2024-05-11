@@ -1,0 +1,27 @@
+.code-block {
+    display: contents;
+    > :first-child {
+        border: 1px solid var(--charcoal);
+        border-radius: 0;
+        position: relative;
+    }
+    .sc-beySPh {
+        background: transparent;
+        border: none;
+        color: var( --charcoal );
+        cursor: pointer;
+        outline: none;
+        right: 0.5rem;
+        position: absolute;
+        top: 0.5rem;
+    }
+    .kEhKfQ:hover,
+    .sc-beySPh:hover {
+        color: var( --blue );
+        opacity: 1;
+    }
+    .linenumber.react-syntax-highlighter-line-number {
+        border-right: 1px solid var( --yellow );
+        margin-right: 1em;
+    }
+}

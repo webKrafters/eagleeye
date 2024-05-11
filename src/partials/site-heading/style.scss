@@ -1,0 +1,63 @@
+:root { --shbg: var( --skye ) }
+.dark { --shbg: var( --midnight ) }
+
+.site-heading {
+    background: var( --shbg );
+    border-bottom: 1px solid;
+    border-color: var( --border-color );
+    > :last-child {
+        justify-content: end;
+        padding-right: 0.5rem;
+        text-align: right;
+    }
+    &, & > :not( .sider-toggle-btn ) {
+        align-items: center;
+        display: flex;
+    }
+    &, & > .site-tags { column-gap: 0.5rem }
+    .sider-toggle-btn {
+        background: var( --charcoal );
+        border: none;
+        border-right: 2px solid var( --blue );
+        color: var( --white );
+        display: block;
+        @media ( min-width: 992px ) { 
+            display: none
+        }
+    }
+    .sider-toggle-btn, .branding, .logo-link, .logo {
+        height: var( --top-height )
+    }
+    .branding { width: 32rem }
+    .logo { width: 8rem }
+    .text {
+        align-items: center;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        width: 23rem;
+        > :first-child {
+            font-size: 1.45rem;
+            font-weight: 800;
+            padding-right: 0.5rem;
+            > a { color: var( --yellow ) }
+        }
+        > :last-child {
+            border-left: 0.25rem solid var( --blue );
+            font-weight: 300;
+            padding-left: 0.5rem;
+            > a { color: var( --blue ) }
+        }
+    }
+    .dark-mode-settings { margin-left: 2rem }
+    @media ( max-width: 835px ) {
+        > .site-tags { display: none }
+    }
+    @media ( max-width: 524px ) {
+        .text {
+            justify-content: flex-start;
+            padding-left: 1.5rem;
+            > :last-child { display: none }
+        }
+    }
+}
