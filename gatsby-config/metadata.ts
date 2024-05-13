@@ -1,6 +1,6 @@
 import pkgJson from '../package.json';
 
-export const NO_SIDER_URI_PATTERN = /^(?:\/(?:quick-start\/?)?(?:\?.*)?)?$/;
+export const NO_SIDER_URI_PATTERN = /^$/; // /^(?:\/(?:quick-start\/?)?(?:\?.*)?)?$/;
 
 export default {
     _24Hours: 8.64e7,
@@ -28,7 +28,7 @@ export default {
     url: {
         demo: 'https://codesandbox.io/s/github/webKrafters/react-observable-context-app',
         npm: 'https://www.npmjs.com/package/@webkrafters/react-observable-context',
-        repo: "https://github.com/webKrafters/egleeye.js.git",
+        repo: "https://github.com/webKrafters/eagleeye.js.git",
         site: pkgJson.homepage
     }
 };

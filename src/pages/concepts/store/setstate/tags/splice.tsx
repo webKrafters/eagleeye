@@ -21,13 +21,24 @@ store.setState({ a: { b: { [ SPLICE_TAG ]: [ 0, 1 ] } } }) // or store.setState(
 /* replaces state.q[4] - [7] with 2 items; leaving state.q = [ 1, 2, 3, 4, 33, 88, 9 ] */
 store.setState({ a: { q: { [ SPLICE_TAG ]: [ 4, 4, 33, 88 ] } } }) // or store.setState({ a: { q: { [ SPLICE_TAG ]: [ -5, 4, 33, 88 ] } } });`
 
+const SAMPLE_CALL =
+`store.setState({
+    stateKey0: { // where \`state.stateKey0\` is an array
+        '@@SPLICE': [ // performs array splice on \`state.stateKey0\`.
+            -/+fromIndex,
+            deleteCount, // integer >= 0
+            ...newInserts?
+        ]
+    }
+});`;
+
 const ConceptStoreSetStateSpliceTagPage : React.FC<{className? : string}> = ({ className }) => (
     <article className={ `concept-store-setstate-splice-tag-usage-page ${ className }` }>
         <h1><code>store.setState</code> @@SPLICE Tag Usage</h1>
-        <div>
-            <h3>Example:</h3>
-            <CodeBlock>{ SAMPLE }</CodeBlock>
-        </div>
+        <strong>Sample:</strong>
+        <pre>{ SAMPLE_CALL }</pre>
+        <h3>Example:</h3>
+        <CodeBlock>{ SAMPLE }</CodeBlock>
     </article>
 );
 

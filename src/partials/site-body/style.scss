@@ -1,4 +1,5 @@
-
+:root { --sbsider-bg: var( --background-color-mild ) }
+.dark { --sbsider-bg: var( --background-color ) }
 
 .site-body {
     display: flex;
@@ -20,12 +21,12 @@
         justify-content: flex-end;
         margin-top: 5px;
         text-align: right;
-        @media ( min-width: 836px ) {
+        @media ( min-width: 936px ) {
             display: none;
         }
     }
     &-sider {
-        background: var( --background-color-mild );
+        background: var( --sbsider-bg );
         border: none;
         border-right: 1px solid var( --border-color );
         padding: 0.5rem;

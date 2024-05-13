@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Anchor from '../../../../../partials/anchor';
 import CodeBlock from '../../../../../partials/code-block';
 
 const SAMPLE =
@@ -35,11 +36,10 @@ store.setState({
 const ConceptStoreSetStateTagsCombinationPage : React.FC<{className? : string}> = ({ className }) => (
     <article className={ `concept-store-setstate-tags-combination-usage-page ${ className }` }>
         <h1>Combination Tags Usage:</h1>
-        <div>
-            <div>Tags may be used in combination with the default usage where all top-level tag command results in property are sequentially merged into state followed by the merging of the rest of the property changes.</div>
-            <h3>Example:</h3>
-            <CodeBlock>{ SAMPLE }</CodeBlock>
-        </div>
+        <p>Tags may be used in combination with the default usage where all top-level tag command results in a given property are sequentially merged into state followed by the merging of the rest of the property changes.</p>
+        <p>However, certain aspects of the above strategy is user-platform implementation dependent. For finer control, a combination of this strategy with <Anchor to="/concepts/store/setstate#batched-update">Batched Updates</Anchor> may be considered.</p>
+        <h3>Example:</h3>
+        <CodeBlock>{ SAMPLE }</CodeBlock>
     </article>
 );
 

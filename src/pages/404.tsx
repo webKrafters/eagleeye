@@ -12,6 +12,8 @@ import LeftOutlinedIcon from '@ant-design/icons/LeftOutlined';
 
 import Anchor from '../partials/anchor';
 
+import Paragraph from '../partials/paragraph';
+
 const styles : {[x:string]: React.CSSProperties} = {
   heading: { height: 50 },
   image: {
@@ -50,9 +52,9 @@ const NotFoundPage : React.FC<{className: string}> = ({ className }) => {
     >
         <h1 style={ styles.heading }>Page not found</h1>
         <div style={ styles.main }>
-          <p style={ styles.message }>
+          <Paragraph style={ styles.message }>
             Sorry 😔, we couldn’t find it for you.
-          </p>
+          </Paragraph>
           <StaticImage
             alt="basking red fox"
             className="image"
@@ -73,7 +75,7 @@ const NotFoundPage : React.FC<{className: string}> = ({ className }) => {
               Unsplash
             </Anchor>
           </div>
-          <p style={ styles.navBack }>
+          <Paragraph style={ styles.navBack }>
             <Button
               icon={ backIconEl }
               onClick={ goBack }
@@ -82,15 +84,15 @@ const NotFoundPage : React.FC<{className: string}> = ({ className }) => {
             >
               Return to safety
             </Button>
-          </p>
-          <p>
+          </Paragraph>
+          <Paragraph>
             <Anchor
               style={ styles.navHomeIcon }
               to="/"
             >
               Go home
             </Anchor>
-          </p>
+          </Paragraph>
         </div>
     </article>
   );

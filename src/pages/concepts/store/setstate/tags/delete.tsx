@@ -25,13 +25,24 @@ store.setState({ a: { b: [ state.a.b[ 0 ], { [ DELETE_TAG ]: [ 'x', 'z' ] } ] } 
 /* removes \`x\` and \`z\` properties from state.a.b[1]; sets state.a.b = [{ x: 7, y: 8, z: 9 }, {y: 18}] using indexing (RECOMMENDED) */
 store.setState({ a: { b: { 1: { [ DELETE_TAG ]: [ 'x', 'z' ] } } } })`;
 
+const SAMPLE_CALL =
+`store.setState({
+    stateKey0: {
+        // removes \`stateKey0.a\` and \`stateKey0.x\` from state
+        '@@DELETE': [ 
+            'a',
+            'x'
+        ]
+    }
+});`;
+
 const ConceptStoreSetStateDeleteTagPage : React.FC<{className? : string}> = ({ className }) => (
     <article className={ `concept-store-setstate-delete-tag-usage-page ${ className }` }>
         <h1><code>store.setState</code> @@DELETE Tag Usage</h1>
-        <div>
-            <h3>Example:</h3>
-            <CodeBlock>{ SAMPLE }</CodeBlock>
-        </div>
+        <strong>Sample:</strong>
+        <pre>{ SAMPLE_CALL }</pre>
+        <h3>Example:</h3>
+        <CodeBlock>{ SAMPLE }</CodeBlock>
     </article>
 );
 

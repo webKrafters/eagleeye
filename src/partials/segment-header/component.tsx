@@ -8,7 +8,7 @@ export interface Props {
 };
 
 const Header : React.FC<Props> = ({ children, ...props }) => (
-    <header { ...props } className="Segment-header">
+    <header { ...props } className="segment-header">
         { children }
     </header>
 );

@@ -25,6 +25,7 @@
 body {
     background-color: var( --background-color );
     color: var( --color );
+    font-size: 16px;
     margin: 0 auto;
     max-width: 2048px;
     overflow-x: hidden;
@@ -43,12 +44,22 @@ body {
         text-decoration: none;
         &:hover { color: #0090ffbb }
     }
-    h1 { font-size: 2rem }
-    h2 { font-size: 1.78em }
-    h3 { font-size: 1.5em }
-    h4 { font-size: 1.25em }
-    h4 { font-size: 1.125em }
-    h1, h2, h3, h4, h5 { margin: 1rem 0 }
+    h1 { &, & * { font-size: 2rem } }
+    h2 { &, & * { font-size: 1.78em } }
+    h3 { &, & * { font-size: 1.5em } }
+    h4 { &, & * { font-size: 1.25em } }
+    h4 { &, & * { font-size: 1.125em } }
+    h1, h2, h3, h4, h5 {
+        &, & * {
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+    }
+}
+
+pre, code, kbd, samp {
+    font-size: 0.8125rem;
+    line-height: 1.42857;
 }
 
 .vertical-top { vertical-align: top }

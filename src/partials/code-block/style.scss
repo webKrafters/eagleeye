@@ -5,20 +5,23 @@
         border-radius: 0;
         position: relative;
     }
-    .sc-beySPh {
+    button[aria-label="Copy Code"] {
         background: transparent;
         border: none;
-        color: var( --charcoal );
         cursor: pointer;
         outline: none;
-        right: 0.5rem;
+        right: 0.2rem;
         position: absolute;
-        top: 0.5rem;
-    }
-    .kEhKfQ:hover,
-    .sc-beySPh:hover {
-        color: var( --blue );
-        opacity: 1;
+        top: 0.2rem;
+        &:hover { opacity: 0.75 }
+        [fill="#e6e1dc"] {
+            &, & * {
+                fill: var( --gray ) !important;
+                &:hover {
+                    fill: var( --blue ) !important;
+                }
+            }
+        }
     }
     .linenumber.react-syntax-highlighter-line-number {
         border-right: 1px solid var( --yellow );

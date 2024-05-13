@@ -30,13 +30,23 @@ store.setState({ a: { b: [ CLEAR_TAG, state.a.b[1] ] } }) // or store.setState({
 /* empties the value at state.a.b[0]; sets state.a.b = [{}, a.b[1]] using indexing (RECOMMENDED) */
 store.setState({ a: { b: { 0: CLEAR_TAG } } }) // or store.setState({ a: { b: { 0: { [ CLEAR_TAG ]: <anything> } } } })`;
 
+const SAMPLE2 =
+`store.setState({
+    stateKey0: {
+        '@@CLEAR': <any> // the value has no effect - removes \`state.stateKey0\` all the same.
+    }
+});`;
 const ConceptStoreSetStateClearTagPage : React.FC<{className? : string}> = ({ className }) => (
     <article className={ `concept-store-setstate-clear-tag-usage-page ${ className }` }>
         <h1><code>store.setState</code> @@CLEAR Tag Usage</h1>
-        <div>
-            <h3>Example:</h3>
-            <CodeBlock>{ SAMPLE }</CodeBlock>
-        </div>
+        <strong>Sample:</strong>
+        { ' ' }
+        <code>{ `store.setState({ stateKey0: '@@CLEAR' });` }</code>
+        <p>{ ' ' } </p>
+        <strong>Sample 2:</strong>
+        <pre>{ SAMPLE2 }</pre>
+        <h3>Example:</h3>
+        <CodeBlock>{ SAMPLE }</CodeBlock>
     </article>
 );
 

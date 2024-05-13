@@ -29,7 +29,7 @@ const Component : React.FC = () => (
 		<AnchorIndent1 to="/api#create-context">CreateContext Function</AnchorIndent1>
 		<AnchorIndent1 to="/api#usage-error">UsageError Exception</AnchorIndent1>
 		<AnchorIndent1 to="/api#usecontext">UseContext Hook</AnchorIndent1>
-		<Anchor className="group-link" to="/concepts">Concepts</Anchor>
+		<Anchor className="group-link" to="/concepts/client">Concepts</Anchor>
 		<AnchorIndent1 to="/concepts/client">Client</AnchorIndent1>
 		<AnchorIndent1 to="/concepts/prehooks">Prehooks</AnchorIndent1>
 		<AnchorIndent1 className="group-link" to="/concepts/property-path">Property Path</AnchorIndent1>
@@ -43,13 +43,13 @@ const Component : React.FC = () => (
 		<AnchorIndent3 to="/concepts/store/setstate#batched-update">Batched Update</AnchorIndent3>
 		<AnchorIndent3 to="/concepts/store/setstate#indexing">Array Indexing</AnchorIndent3>
 		<AnchorIndent3 className="group-link" to="/concepts/store/setstate/tags">Using Tag Commands</AnchorIndent3>
-		<AnchorIndent4 to="/concepts/store/setstate/tags/clear-usage"><b>@@CLEAR</b> Usage Example</AnchorIndent4>
-		<AnchorIndent4 to="/concepts/store/setstate/tags/delete-usage"><b>@@DELETE</b> Usage Example</AnchorIndent4>
-		<AnchorIndent4 to="/concepts/store/setstate/tags/move-usage"><b>@@MOVE</b> Usage Example</AnchorIndent4>
-		<AnchorIndent4 to="/concepts/store/setstate/tags/push-usage"><b>@@PUSH</b> Usage Example</AnchorIndent4>
-		<AnchorIndent4 to="/concepts/store/setstate/tags/replace-usage"><b>@@REPLACE</b> Usage Example</AnchorIndent4>
-		<AnchorIndent4 to="/concepts/store/setstate/tags/set-usage"><b>@@SET</b> Usage Example</AnchorIndent4>
-		<AnchorIndent4 to="/concepts/store/setstate/tags/splice-usage"><b>@@SPLICE</b> Usage Example</AnchorIndent4>
+		<AnchorIndent4 to="/concepts/store/setstate/tags/clear"><b>@@CLEAR</b> Usage Example</AnchorIndent4>
+		<AnchorIndent4 to="/concepts/store/setstate/tags/delete"><b>@@DELETE</b> Usage Example</AnchorIndent4>
+		<AnchorIndent4 to="/concepts/store/setstate/tags/move"><b>@@MOVE</b> Usage Example</AnchorIndent4>
+		<AnchorIndent4 to="/concepts/store/setstate/tags/push"><b>@@PUSH</b> Usage Example</AnchorIndent4>
+		<AnchorIndent4 to="/concepts/store/setstate/tags/replace"><b>@@REPLACE</b> Usage Example</AnchorIndent4>
+		<AnchorIndent4 to="/concepts/store/setstate/tags/set"><b>@@SET</b> Usage Example</AnchorIndent4>
+		<AnchorIndent4 to="/concepts/store/setstate/tags/splice"><b>@@SPLICE</b> Usage Example</AnchorIndent4>
 		<AnchorIndent4 to="/concepts/store/setstate/tags/order-of-operations">Combination Usage Example</AnchorIndent4>
 		<Anchor className="group-link" to="/history/features">What's Changed?</Anchor>
 	</nav>

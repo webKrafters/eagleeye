@@ -22,13 +22,20 @@ store.setState({ a: { b: [ state.a.b[ 0 ], { [ REPLACE_TAG ]: { x: 97, y: 98, z:
 /* rewrites state.a.b[1] to { x: 97, y: 98, z: 99 }; leaving state.a.b = [{ x: 7, y: 8, z: 9 }, { x: 97, y: 98, z: 99 }] using indexing (RECOMMENDED) */
 store.setState({ a: { b: { 1: { [ REPLACE_TAG ]: { x: 97, y: 98, z: 99 } } } } });`
 
+const SAMPLE_CALL =
+`store.setState({
+    stateKey0: {
+        '@@REPLACE': <any> // replaces \`state.stateKey0\` with value 
+    }
+});`;
+
 const ConceptStoreSetStateReplaceTagPage : React.FC<{className? : string}> = ({ className }) => (
     <article className={ `concept-store-setstate-replace-tag-usage-page ${ className }` }>
         <h1><code>store.setState</code> @@REPLACE Tag Usage</h1>
-        <div>
-            <h3>Example:</h3>
-            <CodeBlock>{ SAMPLE }</CodeBlock>
-        </div>
+        <strong>Sample:</strong>
+        <pre>{ SAMPLE_CALL }</pre>
+        <h3>Example:</h3>
+        <CodeBlock>{ SAMPLE }</CodeBlock>
     </article>
 );
 

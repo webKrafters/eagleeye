@@ -21,13 +21,24 @@ store.setState({ a: { b: { [ MOVE_TAG ]: [ 0, 1 ] } } }) // or store.setState({ 
 /* moves state.q[4] - [7] into indexes 1 - 4; leaving state.q = [ 1, 5, 6, 7, 8, 2, 3, 4, 9 ] */
 store.setState({ a: { q: { [ MOVE_TAG ]: [ 4, 1, 4 ] } } }) // or store.setState({ a: { q: { [ MOVE_TAG ]: [ -5, -8, 4 ] } } })`;
 
+const SAMPLE_CALL =
+`store.setState({
+    stateKey0: { // where \`state.stateKey0\` is an array
+        '@@MOVE': [ // repositioning \`numItemsToMove\` items
+            -/+fromIndex,
+            -/+toIndex,
+            +numItemsToMove? = 1
+        ]
+    }
+});`;
+
 const ConceptStoreSetStateMoveTagPage : React.FC<{className? : string}> = ({ className }) => (
     <article className={ `concept-store-setstate-move-tag-usage-page ${ className }` }>
         <h1><code>store.setState</code> @@MOVE Tag Usage</h1>
-        <div>
-            <h3>Example:</h3>
-            <CodeBlock>{ SAMPLE }</CodeBlock>
-        </div>
+        <strong>Sample:</strong>
+        <pre>{ SAMPLE_CALL }</pre>
+        <h3>Example:</h3>
+        <CodeBlock>{ SAMPLE }</CodeBlock>
     </article>
 );
 

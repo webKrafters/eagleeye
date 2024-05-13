@@ -5,6 +5,8 @@ import React from 'react';
 import Anchor from '../partials/anchor';
 import CodeBlock from '../partials/code-block';
 import Header from '../partials/segment-header';
+import NotePad from '../partials/pad/note';
+import Paragraph from '../partials/paragraph';
 
 const creatorCode =
 `import { createContext } from '@webkrafters/react-observable-context';
@@ -143,67 +145,59 @@ export default App;`
 const GettingStartedPage : React.FC<{className : string}> = ({ className }) => (
     <article className={ `getting-started-page ${ className }` }>
         <h1>Getting Started</h1>
-        <div className="snippet-intro">
+        <Paragraph className="snippet-intro" id="install">
             Eagle Eye context and the React.Context API share a similar setup flow. Let us begin by installing the Eagle Eye context package.
-        </div>
-        <div className="snippet-box">
+        </Paragraph>
+        <Paragraph className="snippet-box">
             <CodeBlock isInline>
                 npm install --save react-eagleeye
             </CodeBlock>
-        </div>
-        <div className="snippet-intro" id="create-context-usage">
+        </Paragraph>
+        <Paragraph className="snippet-intro" id="create-context-usage">
             <h3>Creating the context store</h3>
             To obtain a fresh context store, just call the parameterless <code>createContext()</code> function. 
-        </div>
-        <div className="snippet-box">
+        </Paragraph>
+        <Paragraph className="snippet-box">
             <Header>context.js</Header>
             <CodeBlock>{ creatorCode }</CodeBlock>
-        </div>
+        </Paragraph>
         <div className="snippet-intro" id="provider-usage">
             <h3>Providing the context store</h3>
-            Similar to the React.Context API, you can make the context store available to any section of the component tree by wrapping it in the context store's Provider.
-            <div>Further readings on the Eagle Eye Context Provider could be found <Anchor to="/concepts/provider">here</Anchor>.</div>
+            <Paragraph>Similar to the React.Context API, you can make the context store available to any section of the component tree by wrapping it in the context store's Provider.</Paragraph>
+            <Paragraph>Further readings on the Eagle Eye Context Provider could be found <Anchor to="/concepts/provider">here</Anchor>.</Paragraph>
         </div>
-        <div className="snippet-box">
+        <Paragraph className="snippet-box">
             <Header>provider-demo.js</Header>
             <CodeBlock>{ providerCode }</CodeBlock>
-        </div>
+        </Paragraph>
         <div className="snippet-intro" id="connect-usage">
             <h3>Consuming the context store</h3>
-            <p>There are two ways of consuming the Eagle Eye context store: The HOC method and the React Hook method.</p>
-            <p>
-                Let's tackle the HOC method first. This method uses the <code>connect()</code> HOC function to wire up 
-                the context store to your consumer component. It embodies the "set-it-and-forget-it" paradigm. Just set up 
-                a list of property paths to state slices to observe { '(' }see <Anchor to="/concepts/selector-map">Selector Map</Anchor>{ ')' }. 
-                Context takes care of the rest.
-            </p>
-            <p>The following is a sample of the HOC consumer method.</p>
+            <Paragraph>There are two ways of consuming the Eagle Eye context store: The HOC method and the React Hook method.</Paragraph>
+            <Paragraph>Let's tackle the HOC method first. This method uses the <code>connect(...)</code> HOC function to wire up the context store to your consumer component.</Paragraph>
+            <Paragraph>It embodies the "set-it-and-forget-it" paradigm. Just set up a list of property paths to state slices to observe { '(' }see <Anchor to="/concepts/selector-map">Selector Map</Anchor>{ ')' }. Context takes care of the rest.</Paragraph>
+            <Paragraph>The following is a sample of the HOC consumer method.</Paragraph>
         </div>
-        <div className="snippet-box">
+        <Paragraph className="snippet-box">
             <Header>ui.js</Header>
             <CodeBlock>{ connectorCode }</CodeBlock>
-        </div>
+        </Paragraph>
         <div className="snippet-intro" id="usecontext-usage">
             <h3>Consuming the context store (React Hook method)</h3>
-            <p>
-                The following shows how to consume the Eagle Eye context store through the hook method. This method uses 
-                the <code>useContext()</code> function to expose the store to the consumer component. In addition to 
-                setting up a map of property paths to state slices to observe { '(' }see <Anchor to="/concepts/selector-map">Selector Map</Anchor>{ ')' }, 
-                the consumer compoent may have to be wrapped in a <code>React.memo()</code> HOC to shield from 
-                cascading rerenders from parent/anscestor components.
-            </p>
+            <Paragraph>The following shows how to consume the Eagle Eye context store through the hook method.</Paragraph>
+            <Paragraph>This method uses the <code>useContext(...)</code> function to expose the store to the consumer component.</Paragraph>
+            <Paragraph><NotePad>In addition to setting up a map of property paths to state slices to observe { '(' }see <Anchor to="/concepts/selector-map">Selector Map</Anchor>{ ')' }, the consumer compoent may have to be wrapped in a <code>React.memo(...)</code> HOC to shield it from cascading rerenders from parent/anscestor components.</NotePad></Paragraph>
         </div>
-        <div className="snippet-box">
+        <Paragraph className="snippet-box">
             <Header>ui.js</Header>
             <CodeBlock>{ useContextCode }</CodeBlock>
-        </div>
-        <div className="snippet-intro">
+        </Paragraph>
+        <Paragraph className="snippet-intro">
             Wiring up your Eagle Eye context to the rest of the application is identical to the React.Context API. The following is a contrived snippet to demonstrate.
-        </div>
-        <div className="snippet-box">
+        </Paragraph>
+        <Paragraph className="snippet-box">
             <Header>app.js</Header>
             <CodeBlock>{ setupCode }</CodeBlock>
-        </div>
+        </Paragraph>
     </article>
 );
 

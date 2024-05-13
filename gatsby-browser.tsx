@@ -12,11 +12,11 @@ import DarkmodeProvider, { ValueCtx as DarkmodeValueCtx } from './src/partials/d
 
 import Layout from './src/partials/layouts/index';
 
-// // Logs when the client route changes
-// exports.onRouteUpdate = ({ location, prevLocation }) => {
-//   console.log("new pathname", location.pathname)
-//   console.log("old pathname", prevLocation ? prevLocation.pathname : null)
-// }
+export const onRouteUpdate : GatsbyBrowser[ "onRouteUpdate" ] = ({
+    location: { href }, prevLocation
+}) => {
+    setTimeout( () => window.history.replaceState( undefined, '', href ), 500 );
+}
 
 const PageManager : React.FC<{
     children: React.ReactNode,

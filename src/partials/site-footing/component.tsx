@@ -2,8 +2,6 @@ import React, { useCallback, useContext, useRef } from 'react';
 
 import { graphql, useStaticQuery } from 'gatsby';
 
-import { StaticImage } from 'gatsby-plugin-image';
-
 import useCurrentYear from '../../hooks/current-year';
 
 import Anchor from '../anchor';
@@ -80,10 +78,10 @@ const Component : React.FC = props => {
                 <div>
                     &copy;2024{ year !== 2024 && `-${ year }` }
                     { ' ' }
-                    <StaticImage
+                    <img
                         alt="wk Logo"
                         className="wk-logo"
-                        src="../../images/wk-logo.png"
+                        src="/images/wk-logo.png"
                     />
                     { ' ' }
                     webKrafters, Incorporated.
