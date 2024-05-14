@@ -37,7 +37,7 @@ const ConceptStoreSetStateMoveTagPage : React.FC<{className? : string}> = ({ cla
         <h1><code>store.setState</code> @@MOVE Tag Usage</h1>
         <strong>Sample:</strong>
         <pre>{ SAMPLE_CALL }</pre>
-        <h3>Example:</h3>
+        <h4>Example:</h4>
         <CodeBlock>{ SAMPLE }</CodeBlock>
     </article>
 );

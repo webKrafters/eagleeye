@@ -45,7 +45,7 @@ const ConceptStoreSetStateClearTagPage : React.FC<{className? : string}> = ({ cl
         <p>{ ' ' } </p>
         <strong>Sample 2:</strong>
         <pre>{ SAMPLE2 }</pre>
-        <h3>Example:</h3>
+        <h4>Example:</h4>
         <CodeBlock>{ SAMPLE }</CodeBlock>
     </article>
 );

@@ -29,6 +29,7 @@ body {
     margin: 0 auto;
     max-width: 2048px;
     overflow-x: hidden;
+    scroll-behavior: smooth;
     width: 100%;
     @media ( min-width: 2049px ) {
         border-left: 1px solid;
@@ -45,10 +46,10 @@ body {
         &:hover { color: #0090ffbb }
     }
     h1 { &, & * { font-size: 2rem } }
-    h2 { &, & * { font-size: 1.78em } }
-    h3 { &, & * { font-size: 1.5em } }
-    h4 { &, & * { font-size: 1.25em } }
-    h4 { &, & * { font-size: 1.125em } }
+    h2 { &, & * { font-size: 1.78rem } }
+    h3 { &, & * { font-size: 1.5rem } }
+    h4 { &, & * { font-size: 1.25rem } }
+    h4 { &, & * { font-size: 1.125rem } }
     h1, h2, h3, h4, h5 {
         &, & * {
             font-weight: 700;

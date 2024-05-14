@@ -15,8 +15,11 @@ import Layout from './src/partials/layouts/index';
 export const onRouteUpdate : GatsbyBrowser[ "onRouteUpdate" ] = ({
     location: { href }, prevLocation
 }) => {
-    setTimeout( () => window.history.replaceState( undefined, '', href ), 500 );
-}
+    window.scroll( 0, 0 );
+    ( new URL( href ).hash ).length
+        ? setTimeout( () => window.history.replaceState( undefined, '', href ), 500 )
+        : document.querySelector( '.site-body > main' )?.scroll( 0, 0 );
+};
 
 const PageManager : React.FC<{
     children: React.ReactNode,
