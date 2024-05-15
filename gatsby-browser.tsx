@@ -19,6 +19,18 @@ export const onRouteUpdate : GatsbyBrowser[ "onRouteUpdate" ] = ({
     ( new URL( href ).hash ).length
         ? setTimeout( () => window.history.replaceState( undefined, '', href ), 500 )
         : document.querySelector( '.site-body > main' )?.scroll( 0, 0 );
+    setTimeout(() => {
+        const headElement = document.querySelector( 'head' );
+        if( !headElement || headElement.querySelector( ':scope > title' ) ) { return }
+        const titleElement = document.createElement( 'title' );
+        titleElement.setAttribute( 'data-gatsby-head', 'true' );
+        titleElement.appendChild(
+            document.createTextNode(
+                metadata.title
+            )
+        );
+        headElement.appendChild( titleElement );
+    }, 100 );
 };
 
 const PageManager : React.FC<{
