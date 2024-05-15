@@ -1,4 +1,6 @@
-import type { HeadFC } from 'gatsby';
+import type {  HeadFC } from 'gatsby';
+
+import type { PageProps } from '../page-context';
 
 import React, { useCallback, useMemo } from 'react';
 
@@ -42,10 +44,11 @@ const styles : {[x:string]: React.CSSProperties} = {
   }
 };
 
-const NotFoundPage : React.FC<{className: string}> = ({ className }) => {
+const NotFoundPage : React.FC<PageProps> = ({ className }) => {
   const backIconEl = useMemo(() => ( <LeftOutlinedIcon /> ), []);
   const goBack = useCallback(() => navigate( -1 ), []);
   return (
+    
     <article
       className={ `not-found-page ${ className }` }
       style={ styles.page }
@@ -100,4 +103,6 @@ const NotFoundPage : React.FC<{className: string}> = ({ className }) => {
 
 export default NotFoundPage;
 
-export const Head : HeadFC = () => ( <title>Not found</title> );
+export const Head : HeadFC = () => (
+  <title>Not found</title>
+);

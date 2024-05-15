@@ -1,6 +1,10 @@
-import { HeadFC } from 'gatsby';
+import type { HeadFC } from 'gatsby';
+
+import type { PageProps } from '../../../../../page-context';
 
 import React from 'react';
+
+import metadata from '../../../../../../gatsby-config/metadata';
 
 import Anchor from '../../../../../partials/anchor';
 import CodeBlock from '../../../../../partials/code-block';
@@ -39,7 +43,7 @@ const SAMPLE_CALL2 =
     }
 });`;
 
-const ConceptStoreSetStateSetTagPage : React.FC<{className? : string}> = ({ className }) => (
+const ConceptStoreSetStateSetTagPage : React.FC<PageProps> = ({ className }) => (
     <article className={ `concept-store-setstate-set-tag-usage-page ${ className }` }>
         <h1><code>{ `store.setState` }</code> @@SET Tag Usage</h1>
         <strong>Sample 1:</strong>
@@ -61,6 +65,6 @@ const ConceptStoreSetStateSetTagPage : React.FC<{className? : string}> = ({ clas
 
 export default ConceptStoreSetStateSetTagPage;
 
-export const Head: HeadFC = () => (
-    <title>eagleeyejs: @@SET</title>
+export const Head : HeadFC = () => (
+    <title>{ metadata.title }: @@SET</title>
 );

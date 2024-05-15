@@ -29,7 +29,6 @@ export const onRenderBody : GatsbySSR["onRenderBody"] = ({
     metadata.darkmode.defaultValue && 
     setBodyAttributes({ className: 'dark' });
     setHeadComponents([
-        <title key="page-title">{ metadata.title }</title>,
         <link key="mask-icon" rel="mask-icon" href="/safari-pinned-tab.svg" color={ themeColor } />,
         <meta key="msapp-tile" name="msapplication-TileColor" content={ themeColor } />,
     ]);

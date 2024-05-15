@@ -1,6 +1,10 @@
-import { HeadFC } from 'gatsby';
+import type { HeadFC } from 'gatsby';
+
+import type { PageProps } from '../../../../../page-context';
 
 import React from 'react';
+
+import metadata from '../../../../../../gatsby-config/metadata';
 
 import CodeBlock from '../../../../../partials/code-block';
 
@@ -32,7 +36,7 @@ const SAMPLE_CALL =
     }
 });`;
 
-const ConceptStoreSetStateMoveTagPage : React.FC<{className? : string}> = ({ className }) => (
+const ConceptStoreSetStateMoveTagPage : React.FC<PageProps> = ({ className }) => (
     <article className={ `concept-store-setstate-move-tag-usage-page ${ className }` }>
         <h1><code>store.setState</code> @@MOVE Tag Usage</h1>
         <strong>Sample:</strong>
@@ -44,6 +48,6 @@ const ConceptStoreSetStateMoveTagPage : React.FC<{className? : string}> = ({ cla
 
 export default ConceptStoreSetStateMoveTagPage;
 
-export const Head: HeadFC = () => (
-    <title>eagleeyejs: @@MOVE</title>
+export const Head : HeadFC = () => (
+    <title>{ metadata.title }: @@MOVE</title>
 );

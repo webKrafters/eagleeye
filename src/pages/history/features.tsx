@@ -1,5 +1,7 @@
 import type { HeadFC } from 'gatsby';
 
+import type { PageProps } from '../../page-context';
+
 import React from 'react';
 
 import Anchor from '../../partials/anchor';
@@ -9,7 +11,7 @@ TRow.displayName = 'featuresHistory.TRow';
 
 const TCol : React.FC<{children: React.ReactNode}> = ({ children }) => ( <td className="top-barred">{ children }</td> );
 
-const FeaturesHistoryPage : React.FC<{className: string}> = ({ className }) => (
+const FeaturesHistoryPage : React.FC<PageProps> = ({ className }) => (
     <article className={ `features-history-page ${ className }` }>
         <h1 id="changes">What's Changed?</h1>
         <table>
@@ -54,11 +56,11 @@ const FeaturesHistoryPage : React.FC<{className: string}> = ({ className }) => (
     </article>
 );
 
-export const Head : HeadFC = () => (
+export default FeaturesHistoryPage;
+
+export const Head : HeadFC = () => ( 
     <meta
-        content="What\'s changed?"
+        content="What's changed?"
         name="description"
     />
 );
-
-export default FeaturesHistoryPage;

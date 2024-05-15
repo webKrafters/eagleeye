@@ -1,6 +1,10 @@
-import { HeadFC } from 'gatsby';
+import type { HeadFC } from 'gatsby';
+
+import type { PageProps } from '../../../../../page-context';
 
 import React from 'react';
+
+import metadata from '../../../../../../gatsby-config/metadata';
 
 import CodeBlock from '../../../../../partials/code-block';
 
@@ -36,7 +40,7 @@ const SAMPLE_CALL =
     }
 });`;
 
-const ConceptStoreSetStateDeleteTagPage : React.FC<{className? : string}> = ({ className }) => (
+const ConceptStoreSetStateDeleteTagPage : React.FC<PageProps> = ({ className }) => (
     <article className={ `concept-store-setstate-delete-tag-usage-page ${ className }` }>
         <h1><code>store.setState</code> @@DELETE Tag Usage</h1>
         <strong>Sample:</strong>
@@ -48,6 +52,6 @@ const ConceptStoreSetStateDeleteTagPage : React.FC<{className? : string}> = ({ c
 
 export default ConceptStoreSetStateDeleteTagPage;
 
-export const Head: HeadFC = () => (
-    <title>eagleeyejs: @@DELETE</title>
+export const Head : HeadFC = () => (
+    <title>{ metadata.title }: @@DELETE</title>
 );

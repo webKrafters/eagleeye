@@ -1,6 +1,6 @@
 import type { GatsbyConfig } from 'gatsby';
 
-import siteMetadata /* , { PATH_PREFIX } */ from './gatsby-config/metadata';
+import siteMetadata from './gatsby-config/metadata';
 
 const config: GatsbyConfig = {
   // More easily incorporate content into your pages through automatic
