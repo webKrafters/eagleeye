@@ -69,7 +69,7 @@ const ConceptSelectorMapPage : React.FC<{className? : string}> = ({ className })
                 </Paragraph>
             </ListItem>
         </div>
-        <h3 id="selector-map-example">Example:</h3>
+        <h4 id="selector-map-example">Example:</h4>
         <CodeBlock>{ SAMPLE }</CodeBlock>
     </article>
 );

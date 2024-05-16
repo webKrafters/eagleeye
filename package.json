@@ -60,6 +60,7 @@
     "develop": "gatsby develop",
     "env": "gatsby info",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "qa-start": "npm run build && gatsby serve",
     "serve": "gatsby serve",
     "start": "gatsby develop",
     "typecheck": "tsc --noEmit"

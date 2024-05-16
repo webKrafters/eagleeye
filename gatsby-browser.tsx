@@ -15,8 +15,11 @@ import Layout from './src/partials/layouts/index';
 export const onRouteUpdate : GatsbyBrowser[ "onRouteUpdate" ] = ({
     location: { href }, prevLocation
 }) => {
-    setTimeout( () => window.history.replaceState( undefined, '', href ), 500 );
-}
+    setTimeout( () => {
+        sanitizeScroll( href );
+        sanitizePageTitle();
+    }, 100 );
+};
 
 const PageManager : React.FC<{
     children: React.ReactNode,
@@ -58,3 +61,32 @@ export const wrapRootElement : GatsbyBrowser[ 'wrapRootElement' ] = ({ element, 
         </DarkmodeProvider>
     </PageProvider>
 );
+
+function sanitizePageTitle() {
+    const headElement = document.querySelector( 'head' );
+    if( !headElement || headElement.querySelector( ':scope > title' ) ) { return }
+    const titleElement = document.createElement( 'title' );
+    titleElement.setAttribute( 'data-gatsby-head', 'true' );
+    titleElement.appendChild(
+        document.createTextNode(
+            metadata.title
+        )
+    );
+    headElement.appendChild( titleElement );
+}
+
+function sanitizeScroll( href : string ) {
+    const sider = document.querySelector( '.site-body-sider' );
+    if( !sider ) { return restateHistory( href ) }
+    window.scroll( 0, 0 ); 
+    !( new URL( href ).hash ).length
+        ? sider.parentNode?.querySelector( ':scope > main' )?.scroll( 0, 0 )
+        : restateHistory( href );
+}
+
+function restateHistory( href : string ) {
+    setTimeout(
+        () => window.history.replaceState( undefined, '', href ),
+        350
+    );
+}

@@ -1,6 +1,10 @@
-import { HeadFC } from 'gatsby';
+import type { HeadFC } from 'gatsby';
+
+import type { PageProps } from '../../../../../page-context';
 
 import React from 'react';
+
+import metadata from '../../../../../../gatsby-config/metadata';
 
 import CodeBlock from '../../../../../partials/code-block';
 
@@ -36,7 +40,9 @@ const SAMPLE2 =
         '@@CLEAR': <any> // the value has no effect - removes \`state.stateKey0\` all the same.
     }
 });`;
-const ConceptStoreSetStateClearTagPage : React.FC<{className? : string}> = ({ className }) => (
+
+const ConceptStoreSetStateClearTagPage : React.FC<PageProps> = ({ className }) => (
+    
     <article className={ `concept-store-setstate-clear-tag-usage-page ${ className }` }>
         <h1><code>store.setState</code> @@CLEAR Tag Usage</h1>
         <strong>Sample:</strong>
@@ -45,13 +51,13 @@ const ConceptStoreSetStateClearTagPage : React.FC<{className? : string}> = ({ cl
         <p>{ ' ' } </p>
         <strong>Sample 2:</strong>
         <pre>{ SAMPLE2 }</pre>
-        <h3>Example:</h3>
+        <h4>Example:</h4>
         <CodeBlock>{ SAMPLE }</CodeBlock>
     </article>
 );
 
 export default ConceptStoreSetStateClearTagPage;
 
-export const Head: HeadFC = () => (
-    <title>eagleeyejs: @@CLEAR</title>
+export const Head : HeadFC = () => (
+    <title>{ metadata.title }: @@CLEAR</title>
 );

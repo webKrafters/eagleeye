@@ -1,5 +1,7 @@
 import type { GatsbyLinkProps } from 'gatsby';
 
-export interface Props<TState extends {} = {}> extends React.PropsWithoutRef<GatsbyLinkProps<TState>>{
+type AnchorProps = Omit<JSX.IntrinsicElements[ "a" ], "href">
+
+export interface Props<TState extends AnchorProps = AnchorProps> extends React.PropsWithoutRef<GatsbyLinkProps<TState>>{
     hideIcon?: boolean
 };

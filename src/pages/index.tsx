@@ -1,5 +1,7 @@
 import type { HeadFC } from 'gatsby';
 
+import type { PageProps } from '../page-context';
+
 import React from 'react';
 
 import { graphql } from 'gatsby';
@@ -10,27 +12,24 @@ import Paragraph from '../partials/paragraph';
 
 import '../partials/contents/index-page/style.scss';
 
-type Props = {
-	className? : string,
-	data : {
-        site : {
-            siteMetadata : {
-                url : {
-					demo : string,
-					npm : string
-				}
-            }
-        }
-    }
-}
+export type Props = PageProps<{
+	site : {
+		siteMetadata : {
+			url : {
+				demo : string,
+				npm : string
+			}
+		}
+	}
+}>;
 
 const IndexPage : React.FC<Props> = ({ className, data }) => (
-    <article className={ `index-page ${ className }` }>
-    	<h1>Welcome to Eagle Eye JS!</h1>
-      	<Paragraph>An intuitive reactive context based React state manager. </Paragraph>
+	<article className={ `index-page ${ className }` }>
+		<h1>Welcome to Eagle Eye JS!</h1>
+		<Paragraph>An intuitive reactive context based React state manager. </Paragraph>
 		<div>
 			<label>Official:{ ' ' }
-				<Anchor to={ data.site.siteMetadata.url.npm }>
+				<Anchor to={ data?.site.siteMetadata.url.npm as string }>
 					React-Observable-Context
 				</Anchor>
 			</label>
@@ -50,14 +49,14 @@ const IndexPage : React.FC<Props> = ({ className, data }) => (
 				</CodeBlock>
 			</label>
 		</div>
-    	<div>
+		<div>
 			<label>Play with a demo app here on:{ ' ' }
-				<Anchor to={ data.site.siteMetadata.url.demo }>
+				<Anchor to={ data?.site.siteMetadata.url.demo as string }>
 					Code Sandbox
 				</Anchor>
 			</label>
 		</div>
-    	<div>
+		<div>
 			<label>License: <span>MIT</span></label>
 		</div>
 		<h2>Eagle Eye. Why now?</h2>
@@ -74,16 +73,6 @@ const IndexPage : React.FC<Props> = ({ className, data }) => (
 
 export default IndexPage;
 
-export const Head : HeadFC = () => (
-	<>
-		<title>Eagle Eye JS</title>
-		<meta
-			content="Welcome to Eagle Eye context!"
-			name="description"
-		/>
-	</>
-);
-
 export const query = graphql`
     query IntroTitle {
         site {
@@ -96,3 +85,10 @@ export const query = graphql`
         }
     }
 `;
+
+export const Head : HeadFC = () => (
+	<meta
+		content="Welcome to Eagle Eye context!"
+		name="description"
+	/>
+);

@@ -1,6 +1,10 @@
-import { HeadFC } from 'gatsby';
+import type { HeadFC } from 'gatsby';
+
+import type { PageProps } from '../../../../../page-context';
 
 import React from 'react';
+
+import metadata from '../../../../../../gatsby-config/metadata';
 
 import Anchor from '../../../../../partials/anchor';
 import CodeBlock from '../../../../../partials/code-block';
@@ -39,7 +43,7 @@ const SAMPLE_CALL2 =
     }
 });`;
 
-const ConceptStoreSetStateSetTagPage : React.FC<{className? : string}> = ({ className }) => (
+const ConceptStoreSetStateSetTagPage : React.FC<PageProps> = ({ className }) => (
     <article className={ `concept-store-setstate-set-tag-usage-page ${ className }` }>
         <h1><code>{ `store.setState` }</code> @@SET Tag Usage</h1>
         <strong>Sample 1:</strong>
@@ -54,13 +58,13 @@ const ConceptStoreSetStateSetTagPage : React.FC<{className? : string}> = ({ clas
         <Paragraph>Please use sparingly. In most cases, store.setState with or without any of the other tags is sufficient and most efficient.</Paragraph>
         <Paragraph>This and the '<strong><Anchor to="/concepts/store/setstate/tags/replace">@@REPLACE</Anchor></strong>' tags are functionally equivalent when used with a replacement value argument.</Paragraph>
         <Paragraph>Be aware that the compute function argument may be <code>undefined</code> for properties which do not yet exist in the state.</Paragraph>
-        <h3>Example:</h3>
+        <h4>Example:</h4>
         <CodeBlock>{ SAMPLE }</CodeBlock>
     </article>
 );
 
 export default ConceptStoreSetStateSetTagPage;
 
-export const Head: HeadFC = () => (
-    <title>eagleeyejs: @@SET</title>
+export const Head : HeadFC = () => (
+    <title>{ metadata.title }: @@SET</title>
 );

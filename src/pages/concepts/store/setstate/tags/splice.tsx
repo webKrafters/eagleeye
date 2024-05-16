@@ -1,6 +1,10 @@
-import { HeadFC } from 'gatsby';
+import type { HeadFC } from 'gatsby';
+
+import type { PageProps } from '../../../../../page-context';
 
 import React from 'react';
+
+import metadata from '../../../../../../gatsby-config/metadata';
 
 import CodeBlock from '../../../../../partials/code-block';
 
@@ -32,18 +36,18 @@ const SAMPLE_CALL =
     }
 });`;
 
-const ConceptStoreSetStateSpliceTagPage : React.FC<{className? : string}> = ({ className }) => (
+const ConceptStoreSetStateSpliceTagPage : React.FC<PageProps> = ({ className }) => (
     <article className={ `concept-store-setstate-splice-tag-usage-page ${ className }` }>
         <h1><code>store.setState</code> @@SPLICE Tag Usage</h1>
         <strong>Sample:</strong>
         <pre>{ SAMPLE_CALL }</pre>
-        <h3>Example:</h3>
+        <h4>Example:</h4>
         <CodeBlock>{ SAMPLE }</CodeBlock>
     </article>
 );
 
 export default ConceptStoreSetStateSpliceTagPage;
 
-export const Head: HeadFC = () => (
-    <title>eagleeyejs: @@SPLICE</title>
+export const Head : HeadFC = () => (
+    <title>{ metadata.title }: @@SPLICE</title>
 );
