@@ -15,21 +15,9 @@ import Layout from './src/partials/layouts/index';
 export const onRouteUpdate : GatsbyBrowser[ "onRouteUpdate" ] = ({
     location: { href }, prevLocation
 }) => {
-    window.scroll( 0, 0 );
-    ( new URL( href ).hash ).length
-        ? setTimeout( () => window.history.replaceState( undefined, '', href ), 500 )
-        : document.querySelector( '.site-body > main' )?.scroll( 0, 0 );
-    setTimeout(() => {
-        const headElement = document.querySelector( 'head' );
-        if( !headElement || headElement.querySelector( ':scope > title' ) ) { return }
-        const titleElement = document.createElement( 'title' );
-        titleElement.setAttribute( 'data-gatsby-head', 'true' );
-        titleElement.appendChild(
-            document.createTextNode(
-                metadata.title
-            )
-        );
-        headElement.appendChild( titleElement );
+    setTimeout( () => {
+        sanitizeScroll( href );
+        sanitizePageTitle();
     }, 100 );
 };
 
@@ -73,3 +61,32 @@ export const wrapRootElement : GatsbyBrowser[ 'wrapRootElement' ] = ({ element, 
         </DarkmodeProvider>
     </PageProvider>
 );
+
+function sanitizePageTitle() {
+    const headElement = document.querySelector( 'head' );
+    if( !headElement || headElement.querySelector( ':scope > title' ) ) { return }
+    const titleElement = document.createElement( 'title' );
+    titleElement.setAttribute( 'data-gatsby-head', 'true' );
+    titleElement.appendChild(
+        document.createTextNode(
+            metadata.title
+        )
+    );
+    headElement.appendChild( titleElement );
+}
+
+function sanitizeScroll( href : string ) {
+    const sider = document.querySelector( '.site-body-sider' );
+    if( !sider ) { return restateHistory( href ) }
+    window.scroll( 0, 0 ); 
+    !( new URL( href ).hash ).length
+        ? sider.querySelector( ':scope + main' )?.scroll( 0, 0 )
+        : restateHistory( href );
+}
+
+function restateHistory( href : string ) {
+    setTimeout(
+        () => window.history.replaceState( undefined, '', href ),
+        350
+    );
+}
