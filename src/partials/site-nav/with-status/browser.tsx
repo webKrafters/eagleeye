@@ -11,7 +11,7 @@ const WithStatus : React.FC<Props> = typeof window === 'undefined'
         const [ active, setActive ] = useState( false );
         const to = useMemo(() => {
             const { hash, pathname } = new URL( window.location.origin + toProp );
-            return `${ pathname }/${ hash.length ? hash : '' }`; 
+            return `${ pathname }${ toProp === '/' ? '' : '/' }${ hash.length ? hash : '' }`; 
         }, [ toProp ]);
         useEffect(() => setActive(
             location?.href.slice( location.origin.length ) === to
