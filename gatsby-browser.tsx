@@ -80,7 +80,7 @@ function sanitizeScroll( href : string ) {
     if( !sider ) { return restateHistory( href ) }
     window.scroll( 0, 0 ); 
     !( new URL( href ).hash ).length
-        ? sider.querySelector( ':scope + main' )?.scroll( 0, 0 )
+        ? sider.parentNode?.querySelector( ':scope > main' )?.scroll( 0, 0 )
         : restateHistory( href );
 }
 
