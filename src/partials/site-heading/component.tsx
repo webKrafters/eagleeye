@@ -1,6 +1,4 @@
-import React, { useContext, useMemo } from 'react';
-
-import { Button } from 'antd';
+import React, { useContext, useLayoutEffect } from 'react';
 
 import CloseOutlinedIcon from '@ant-design/icons/CloseOutlined';
 import MenuOutlinedIcon from '@ant-design/icons/MenuOutlined';
@@ -10,6 +8,9 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 
 import Anchor from '../anchor';
+import ToggleSwitch from '../toggle-switch';
+
+import AuxSiderToggleable from '../toggle-switch/container/aux-sider';
 
 import { ValueCtx } from '../../page-context';
 
@@ -19,26 +20,22 @@ import SiteTags from '../site-tags';
 
 import './style.scss';
 
-interface Props {  
-  isSiderCollapsed?: boolean,
-  onToggleSider?: VoidFunction
+interface Props {
+  isAuxCollapsed?: boolean;
+  isSiderCollapsed?: boolean;
+  onToggleAux?: VoidFunction;
+  onToggleSider?: VoidFunction;
 };
 
-const SiderToggleable : React.FC<Props> = ({ isSiderCollapsed, onToggleSider }) => {
-  const siderSwitchProps = useMemo(() => {
-    const props: {
-      className: string,
-      icon: React.ReactNode,
-      onClick?: Props[ "onToggleSider" ]
-    } = {
-      className: 'sider-toggle-btn',
-      icon: isSiderCollapsed ? ( <MenuOutlinedIcon /> ) : ( <CloseOutlinedIcon /> )
-    };
-    if( onToggleSider ) { props.onClick = onToggleSider }
-    return props;
-  }, [ isSiderCollapsed, onToggleSider ]);
-  return ( <Button { ...siderSwitchProps } /> );
-};
+const SiderToggleable : React.FC<Props> = props => (
+  <ToggleSwitch
+    className="sider-toggle-btn"
+    isOn={ !props.isSiderCollapsed }
+    OffIconType={ CloseOutlinedIcon }
+    OnIconType={ MenuOutlinedIcon }
+    onToggle={ props.onToggleSider }
+  />
+);
 
 const Component : React.FC<Props> = props => { 
   const { site: { siteMetadata: { title, url: {
@@ -59,13 +56,18 @@ const Component : React.FC<Props> = props => {
         }
     `
   );
-  
-  
+  const { isNoSiderPage } = useContext( ValueCtx );
+  useLayoutEffect(() => {
+    props.isAuxCollapsed === false &&
+    window.scroll({
+      behavior: 'smooth',
+      left: 0,
+      top: 0
+    });
+  }, [ props.isAuxCollapsed ]);
   return (
     <header className="site-heading">
-      { !useContext( ValueCtx ).isNoSiderPage && (
-        <SiderToggleable { ...props } />
-      ) }
+      { !isNoSiderPage && ( <SiderToggleable { ...props } /> ) }
       <div className="branding">
         <Anchor className="logo-link" to="/">
           <StaticImage
@@ -89,6 +91,12 @@ const Component : React.FC<Props> = props => {
       </div>
       <SiteTags />
       <DarkModeSetting />
+      { !isNoSiderPage && (
+        <AuxSiderToggleable
+          isOn={ !props.isAuxCollapsed }
+          onToggle={ props.onToggleAux }
+        />
+      ) }
     </header>
   );
 };
