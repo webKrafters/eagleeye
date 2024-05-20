@@ -13,17 +13,24 @@ import './style.scss';
 export interface Props { children? : React.ReactNode };
 
 const Layout : React.FC<Props> = ({ children }) => {
+  const [ isAuxCollapsed, setCollapsedAuxFlag ] = useState( true );
   const [ isSiderCollapsed, setCollapsedSiderFlag ] = useState( isHandheldWidth );
+  const toggleAuxSwitch = useCallback(() => setCollapsedAuxFlag( f => !f ), []);
   const toggleSiderSwitch = useCallback(() => setCollapsedSiderFlag( f => !f ), []);
   return (
     <div className="index-layout">
       <SiteHeading
+        isAuxCollapsed={ isAuxCollapsed }
         isSiderCollapsed={ isSiderCollapsed }
+        onToggleAux={ toggleAuxSwitch }
         onToggleSider={ toggleSiderSwitch }
       />
       <SiteBody 
+        isAuxCollapsed={ isAuxCollapsed }
         isSiderCollapsed={ isSiderCollapsed }
+        onAuxVisibilityChange={ setCollapsedAuxFlag }
         onSiderVisibilityChange={ setCollapsedSiderFlag }
+        onToggleAux={ toggleAuxSwitch }
       >
         { children }
       </SiteBody>
