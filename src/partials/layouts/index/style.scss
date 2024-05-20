@@ -9,98 +9,10 @@
         position: fixed;
         width: 100%;
         z-index: 10;
-        > :last-child {
-            @media ( max-width: 535px ) {
-                display: none !important;
-            }
-        }
-        .nav-minor a {
-            &.link-0 {
-                @media ( max-width: 983px ) {
-                    display: none;
-                }
-            }
-            &.link-1 {
-                @media ( max-width: 1115px ) {
-                    display: none;
-                }
-            }
-            &.link-2 {
-                @media ( max-width: 1225px ) {
-                    display: none;
-                }
-            }
-        }
-        .dark-mode-settings {
-            @media ( max-width: 535px ) {
-                display: none;
-            }
-        }
-        .aux-sider-toggle-btn {
-            @media ( max-width: 639px ) {
-                display: none;
-            }
-            @media ( min-width: 1400px ) {
-                display: none;
-            } 
-        }
-        .site-tags {
-            @media ( max-width: 919px ) {
-                display: none;
-            }
-        }
-        .sider-toggle-btn {
-            @media ( min-width: 992px ) { 
-                display: none;
-            }
-        }
     } 
     > .site-body {
         flex: 1 0 auto;
         margin-top: var( --top-height );
-        .aux-sider {
-            display: none;
-            @media ( max-width: 1399px ) {
-                &.permanent-on { display: initial }
-            }
-            .close {
-                @media ( min-width: 639px ) {
-                    display: none;
-                }
-            }
-            .nav-minor {
-                @media ( max-width: 353px ) {
-                    display: block;
-                }
-                a {
-                    &.link-0 {
-                        @media ( max-width: 983px ) {
-                            display: initial;
-                        }
-                    }
-                    &.link-1 {
-                        @media ( max-width: 1115px ) {
-                            display: initial;
-                        }
-                    }
-                    &.link-2 {
-                        @media ( max-width: 1225px ) {
-                            display: initial;
-                        }
-                    }
-                }
-            }
-        }
-        .tags-area {
-            @media ( min-width: 920px ) {
-                display: none;
-            }
-            > .aux-sider-toggle-btn {
-                @media ( max-width: 639px ) {
-                    display: initial;
-                }
-            }
-        }
     }
     > .site-footing { flex: 0 1 auto }
 }
