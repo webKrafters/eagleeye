@@ -5,17 +5,24 @@
     background: var( --shbg );
     border-bottom: 1px solid;
     border-color: var( --border-color );
+    column-gap: 0.5rem;
     > * { flex: 1 1 auto }
-    > :last-child {
-        justify-content: end;
-        padding-right: 0.5rem;
-        text-align: right;
-    }
-    &, & > :not( .sider-toggle-btn ) {
+    &, & > * {
         align-items: center;
         display: flex;
     }
-    &, & > .site-tags { column-gap: 0.5rem }
+    > :last-child {
+        flex-wrap: nowrap;
+        gap: 1rem;
+        justify-content: flex-end;
+        overflow-x: hidden;
+        padding-right: 0.5rem;
+        text-align: right;
+        > .site-tags { margin-right: 5rem }
+    }
+    .sider-toggle-btn, .branding, .logo-link, .logo {
+        height: var( --top-height )
+    }
     .sider-toggle-btn {
         background: var( --charcoal );
         border: none;
@@ -23,13 +30,7 @@
         color: var( --white );
         display: block;
         flex: 0 0 2rem;
-        @media ( min-width: 992px ) { 
-            display: none
-        }
         > * { font-size: 1rem }
-    }
-    .sider-toggle-btn, .branding, .logo-link, .logo {
-        height: var( --top-height )
     }
     .branding { width: 32rem }
     .logo { width: 8rem }
@@ -39,6 +40,10 @@
         flex-wrap: nowrap;
         justify-content: center;
         width: 23rem;
+        @media ( max-width: 524px ) {
+            justify-content: flex-start;
+            padding-left: 1.5rem;
+        }
         > :first-child {
             font-size: 1.45rem;
             font-weight: 800;
@@ -50,23 +55,9 @@
             font-weight: 300;
             padding-left: 0.5rem;
             > a { color: var( --blue ) }
-        }
-    }
-    .dark-mode-settings {
-        flex: 0 0 auto;
-        margin-right: 1.5rem;
-        @media ( max-width: 592px ) {
-            display: none;
-        }
-    }
-    @media ( max-width: 935px ) {
-        > .site-tags { display: none }
-    }
-    @media ( max-width: 524px ) {
-        .text {
-            justify-content: flex-start;
-            padding-left: 1.5rem;
-            > :last-child { display: none }
+            @media ( max-width: 524px ) {
+                display: none;
+            }
         }
     }
 }

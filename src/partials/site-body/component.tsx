@@ -28,7 +28,6 @@ import { ValueCtx } from '../../page-context';
 import findElementInPath from '../../util/find-element';
 import hasHandheldWidth from '../../util/is-handheld-portrait';
 
-import NavMinor from '../nav-minor';
 import SiteFaqs from '../site-faqs';
 import SiteNav from '../site-nav';
 import SiteTags from '../site-tags';
@@ -109,10 +108,12 @@ const NoSider : React.FC<Pick<Props, "children" | "isAuxCollapsed" | "onToggleAu
         <main>
             <div className="tags-area">
                 <SiteTags />
-                <AuxSiderToggleable
-                    isOn={ !props.isAuxCollapsed }
-                    onToggle={ props.onToggleAux }
-                />
+                { !useContext( ValueCtx ).isNoSiderPage && (
+                    <AuxSiderToggleable
+                        isOn={ !props.isAuxCollapsed }
+                        onToggle={ props.onToggleAux }
+                    />
+                ) }
             </div>
             { page }
         </main>
@@ -190,7 +191,6 @@ const WithSider : React.FC<Props> = ({
                 onClose={ closeAux }
                 ref={ auxSliderRef }
             >
-                <NavMinor />
                 <SiteFaqs />
             </AuxSider>
         </>

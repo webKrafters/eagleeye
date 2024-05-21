@@ -42,22 +42,6 @@
             right: -0.5rem;
             top: 0;
         }
-        // @debug
-        // .nav-minor {
-        //     justify-content: flex-end;
-        //     padding: 1rem 2.5rem 1rem 1.25rem;
-        //     @media ( max-width: 1225px ) {
-        //         background: var( --sbsider-bg );
-        //         border-bottom: 1px dashed var( --border-color );
-        //     }
-        //     @media ( max-width: 353px ) {
-        //         > * {  padding: 0.5rem 0.25rem  }
-        //     }
-        //     a {
-        //         display: none;
-        //         font-weight: 700;
-        //     }
-        // }
     }
     .tags-area {
         align-items: center;
@@ -68,7 +52,7 @@
         justify-content: flex-end;
         > .aux-sider-toggle-btn {
             display: none;
-            margin-right: -0.75rem;
+            margin-right: -1.5rem;
             .anticon-more { font-size: 1.8rem }
             .anticon-shrink { font-size: 1.35rem }
         }

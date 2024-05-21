@@ -89,14 +89,16 @@ const Component : React.FC<Props> = props => {
           </span>
         </div>
       </div>
-      <SiteTags />
-      <DarkModeSetting />
-      { !isNoSiderPage && (
-        <AuxSiderToggleable
-          isOn={ !props.isAuxCollapsed }
-          onToggle={ props.onToggleAux }
-        />
-      ) }
+      <div>
+        <SiteTags />
+        <DarkModeSetting />
+        { !isNoSiderPage && (
+          <AuxSiderToggleable
+            isOn={ !props.isAuxCollapsed }
+            onToggle={ props.onToggleAux }
+          />
+        ) }
+      </div>
     </header>
   );
 };
