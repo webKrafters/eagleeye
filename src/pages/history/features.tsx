@@ -15,6 +15,10 @@ const FeaturesHistoryPage : React.FC<PageProps> = ({ className }) => (
     <article className={ `features-history-page ${ className }` }>
         <h1 id="changes">What's Changed?</h1>
         <table>
+            <thead><TRow><th>v5.0.0</th></TRow></thead>
+            <tbody>
+                <TRow><TCol><b>1.</b></TCol><TCol>Converted to full Typescript.</TCol></TRow>
+            </tbody>
             <thead><TRow><th>v4.7.0</th></TRow></thead>
             <tbody>
                 <TRow><TCol><b>1.</b></TCol><TCol><Anchor to="/concepts/store/setstate"><code>store.setState</code></Anchor> can now accept an array of updates for gurranteed orderly processing.</TCol></TRow>
