@@ -7,6 +7,7 @@ import Anchor from '../partials/anchor';
 import Header from '../partials/segment-header';
 import ListItem from '../partials/list-item';
 import Paragraph from '../partials/paragraph';
+import SelectTab from '../partials/select-tab';
 
 const providerCode =
 `import React, { forwardRef } from 'react';
@@ -79,9 +80,17 @@ const externalAccessCode =
 export default Monitor;`
 
 const RESET_STATE_SAMPLE =
-`store.subscribe( // returning an unsubsciber function
-    ( changes: Changes<State> ) => void
-) => VoidFunction`
+`store.subscribe((
+    changes: Changes<State>
+) => void ) // => VoidFunction`
+
+const RESET_STATE_SAMPLE_v6_0_0 =
+`store.subscribe((
+    changes : Changes<State>,
+    changedPaths : Array<Array<string>>,
+    netChanges : Partial<State>,
+    mayHaveChangesAt : (tokenizedPath : string[]) => boolean
+) => void) // => VoidFunction`
 
 const ExternalAccessPage : React.FC<{className : string}> = ({ className }) => (
     <article className={ `external-access-page ${ className }` }>
@@ -93,13 +102,53 @@ const ExternalAccessPage : React.FC<{className : string}> = ({ className }) => (
         <Paragraph>When the reference is no longer needed, be sure to unsubscribe all observers attached through this store reference during this phase.</Paragraph>
         <Paragraph>For external access to the context, <strong>4</strong> store methods have been exposed. Namely:</Paragraph>
         <ol id="external-apis">
-            <li><strong><code>store.getState()</code>:</strong> Provides a static snapshot of the current state.</li>
-            <li><strong><code>store.resetState()</code>:</strong> Please see descriptions in the <Anchor to="/concepts/store/resetstate">store</Anchor> page.</li>
+            <li><strong><code>store.getState()</code>:</strong> Provides a static snapshot of the current state. Since v6.0.0, may accept a list of property paths to target properties within the state to fetch and return</li>
+            <li><strong><code>store.resetState()</code>:</strong> Please see descriptions in the <Anchor to="/concepts/store/resetstate">store</Anchor> page. Since v6.0.0, may accept a parameterless invocation resulting in a noop.</li>
             <li><strong><code>store.setState()</code>:</strong> Please see descriptions in the <Anchor to="/concepts/store/setstate">store</Anchor> page.</li>
             <li>
-                <strong><code>store.subscribe(...)</code>:</strong> Provides an API for  manual subscription to the state. E.g.
-                <pre>{ RESET_STATE_SAMPLE }</pre>
-                Provides an API for  manual subscription to the state.
+                <strong><code>store.subscribe(...)</code></strong>
+                <table>
+                    <tr>
+                        <td style={{ paddingRight: '0.5rem', verticalAlign: 'top' }}>-</td>
+                        <td>Provides an API for manual subscription to the state.</td>
+                    </tr>
+                    <tr>
+                        <td style={{ paddingRight: '0.5rem', verticalAlign: 'top' }}>-</td>
+                        <td>Accepts an observer function.</td>
+                    </tr>
+                    <tr>
+                        <td style={{ paddingRight: '0.5rem', verticalAlign: 'top' }}>-</td>
+                        <td>Returns a parameterless void function - the <b><u>unsubcriber</u></b>.</td>
+                    </tr>
+                </table>
+                <SelectTab
+                    options={[{
+                        label: <b>As of: v6.0.0</b>,
+                        value: (
+                            <>
+                                <pre>{ RESET_STATE_SAMPLE_v6_0_0 }</pre>
+                                <b>Observer Callback Params</b><br />
+                                <ol>
+                                    <li><u>changes:</u> an object or array holding the original change request payload(s).</li>
+                                    <li><u>changedPaths:</u> an array of tokenized property paths belonging to state properties changed during this request.</li>
+                                    <li><u>netChanges:</u> an object of the final state of all properties in state changed.</li>
+                                    <li><u>mayHaveChangesAt:</u> a function to confirm that a given property path is among the new changes. This path is to be supplied as a tokenized string (i.e. supply <code>['a', 'b', 'c', '0', 'r']</code> for <code>'a.b.c[0].r'</code>).</li>
+                                </ol>
+                            </>
+                        )
+                    }, {
+                        label: <b>Legacy</b>,
+                        value: (
+                            <>  
+                                <pre>{ RESET_STATE_SAMPLE }</pre>
+                                <b>Observer Callback Params</b><br />
+                                <ol>
+                                    <li><u>changes:</u> an object or array holding the original change request payload(s).</li>
+                                </ol>
+                            </>
+                        )
+                    }]}
+                />
             </li>
         </ol>
         <h4>Let's see some code!</h4>
