@@ -39,13 +39,14 @@ const IndexPage : React.FC<Props> = ({ className, data }) => (
 			<label>
 				<strong>Main:</strong>
 				<CodeBlock isInline>
-					npm install --save react-eagleeye
+					npm install --save @webkrafters/react-observable-context
 				</CodeBlock>
 			</label>
 			<label>
-				<strong>Alternate:</strong>
+				<strong>Defunct:</strong>
+				{/* <strong>Alternate:</strong> */}
 				<CodeBlock isInline>
-					npm install --save @webkrafters/react-observable-context
+					npm install --save react-eagleeye
 				</CodeBlock>
 			</label>
 		</div>
