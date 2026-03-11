@@ -1,4 +1,6 @@
 import React from 'react';
+
+import Name from '../../partials/name';
 import VersionTabs, { SemVer } from '../../partials/version-tabs';
 
 const semver_7_0_0 : SemVer = [ 7, 0, 0 ];
@@ -24,7 +26,7 @@ function BodyCurrent(){
     return (
         <>
             <h3>About the Storage</h3>
-            <p>The Eagle Eye context allows for a user-defined Storage object to be provided for maintaining the integrity of the initial context state at a location of the user's choosing.</p>
+            <p>The <Name /> allows for a user-defined Storage object to be provided for maintaining the integrity of the initial context state at a location of the user's choosing.</p>
             <p>This, it accepts, either via its <code>createEagleEye{ '(...)' }</code> optional third parameter or by setting its <code>prehooks</code> property.</p>
             <Common />
         </>
@@ -35,7 +37,7 @@ function BodyPre_7_0_0(){
     return (
         <>
             <h3>About the Storage</h3>
-            <p>The Eagle Eye context allows for a user-defined Storage object to be provided for maintaining the integrity of the initial context state at a location of the user's choosing.</p>
+            <p>The <Name /> allows for a user-defined Storage object to be provided for maintaining the integrity of the initial context state at a location of the user's choosing.</p>
             <p>This, it accepts, via its Provider's <code>storage</code> optional prop.</p>
             <Common />
         </>

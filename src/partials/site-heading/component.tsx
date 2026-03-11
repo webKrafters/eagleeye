@@ -8,6 +8,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 
 import Anchor from '../anchor';
+import Name from '../name';
 import ToggleSwitch from '../toggle-switch';
 
 import AuxSiderToggleable from '../toggle-switch/container/aux-sider';
@@ -79,7 +80,7 @@ const Component : React.FC<Props> = props => {
         <div className="text">
           <span className="brand">
             <Anchor hideIcon to={ repoUrl }>
-              Eagle Eye
+              <Name />
             </Anchor>
           </span>
           <span className="name">

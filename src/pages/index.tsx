@@ -9,6 +9,7 @@ import { graphql } from 'gatsby';
 import Anchor from '../partials/anchor';
 import CodeBlock from '../partials/code-block';
 import License from '../partials/license-link';
+import Name from '../partials/name';
 import Paragraph from '../partials/paragraph';
 
 import '../partials/contents/index-page/style.scss';
@@ -27,12 +28,12 @@ export type Props = PageProps<{
 const IndexPage : React.FC<Props> = ({ className, data }) => {
 	return (
 		<article className={ `index-page ${ className }` }>
-			<h1>Welcome to Eagle Eye JS!</h1>
+			<h1>Welcome to <Name /> JS!</h1>
 			<Paragraph>
 				<label>
 					<b>Official:{ ' ' }</b>
 					<Anchor to={ data?.site.siteMetadata.url.npm as string }>
-						Eagle Eye
+						<Name />
 					</Anchor>
 				</label>
 			</Paragraph>
@@ -52,7 +53,7 @@ const IndexPage : React.FC<Props> = ({ className, data }) => {
 				<label>
 					<b>Play with a demo app here on:{ ' ' }</b>
 					<Anchor to={ data?.site.siteMetadata.url.demo as string }>
-						Code Sandbox (react.js edition)
+						Code Sandbox { '(' }via React Observable Context JS{ ')' }
 					</Anchor>
 				</label>
 			</Paragraph>
@@ -62,7 +63,7 @@ const IndexPage : React.FC<Props> = ({ className, data }) => {
 					<License />
 				</label>
 			</Paragraph>
-			<h2>Eagle Eye. Why now?</h2>
+			<h2><Name />. Why now?</h2>
 			<ul>
 				<li>Auto-immutable update-friendly context. See <Anchor to="/concepts/store/setstate"><code>store.setState</code></Anchor>.</li>
 				<li>A context bearing an observable consumer <Anchor to="/concepts/store">store</Anchor>.</li>

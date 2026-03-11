@@ -20,11 +20,7 @@ export default {
     },
     language: 'en',
     siteUrl: 'https://eagleeye.js.org',
-    title: pkgJson.name
-        .replace( /-dev$/i, '-jS' )
-        .split( /-+/ )
-        .map(( t : string ) => `${ t[ 0 ].toUpperCase() }${ t.substring( 1 ) }` )
-        .join( ' ' ),
+    title: 'Eagle Eye JS',
     url: {
         demo: 'https://codesandbox.io/s/github/webKrafters/react-observable-context-app',
         npm: 'https://www.npmjs.com/package/@webkrafters/eagleeye',

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Anchor from '../../../partials/anchor';
+import Name from '../../../partials/name';
 import Paragraph from '../../../partials/paragraph';
 
 const ConceptClientPage : React.FC<{className? : string}> = ({ className }) => (
@@ -12,8 +13,8 @@ const ConceptClientPage : React.FC<{className? : string}> = ({ className }) => (
                 <Paragraph>
                     A client is any component consuming the observable context. A client consumes the context by:
                     <ul>
-                        <li>either using the Eagle Eye <Anchor to="/api#usecontext">useContext</Anchor> hook</li>
-                        <li>or embedding itself within the connector returned by the Eagle Eye <Anchor to="/api#connect">connect</Anchor> function</li>
+                        <li>either using the <Name /> <Anchor to="/api#usecontext">useContext</Anchor> hook</li>
+                        <li>or embedding itself within the connector returned by the <Name /> <Anchor to="/api#connect">connect</Anchor> function</li>
                     </ul>
                 </Paragraph>
                 <Paragraph>
