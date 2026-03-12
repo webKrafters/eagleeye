@@ -1,9 +1,13 @@
 .code-block {
     display: contents;
     > :first-child {
-        border: 1px solid var(--charcoal);
+        background: var( --blackie );
+        border: 1px solid var( --charcoal );
         border-radius: 0;
         position: relative;
+        > span {
+            background: var( --blackie ) !important
+        }
     }
     button[aria-label="Copy Code"] {
         background: transparent;
