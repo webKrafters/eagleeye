@@ -33,6 +33,7 @@ import SiteNav from '../site-nav';
 import SiteTags from '../site-tags';
 
 import AuxSiderToggleable from '../toggle-switch/container/aux-sider';
+import VersionOfInterest from '../version-of-interest';
 
 import './style.scss';
 
@@ -115,6 +116,7 @@ const NoSider : React.FC<Pick<Props, "children" | "isAuxCollapsed" | "onToggleAu
                     />
                 ) }
             </div>
+            <VersionOfInterest />
             { page }
         </main>
     );

@@ -11,18 +11,13 @@ const ConceptClientPage : React.FC<{className? : string}> = ({ className }) => (
             <h3>What is a client?</h3>
             <div>
                 <Paragraph>
-                    A client is any component consuming the observable context. A client consumes the context by:
-                    <ul>
-                        <li>either using the <Name /> <Anchor to="/api#usecontext">useContext</Anchor> hook</li>
-                        <li>or embedding itself within the connector returned by the <Name /> <Anchor to="/api#connect">connect</Anchor> function</li>
-                    </ul>
+                    A client is any entity observing the <Name /> instance.
                 </Paragraph>
                 <Paragraph>
-                    Please see examples respectively in:
-                    <ol>
-                        <li><Anchor to="/getting-started#usecontext-usage">Consuming context { '(' }hook with memo method{ ')' }</Anchor></li>
-                        <li><Anchor to="/getting-started#connect-usage">Consuming context { '(' }hoc method{ ')' }</Anchor></li>
-                    </ol>
+                    A client observes an instance by invoking its <Name /> <Anchor to="/api#streaming">stream</Anchor> function property.
+                </Paragraph>
+                <Paragraph>
+                    Please see an example of a client joining a stream <Anchor to="/getting-started#streaming">here.{ ')' }</Anchor>
                 </Paragraph>
             </div>
         </div>
