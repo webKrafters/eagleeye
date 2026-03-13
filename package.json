@@ -27,6 +27,7 @@
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "prettier": "2.2.1",
+    "tsx": "^4.21.0",
     "typescript": "^5.3.3"
   },
   "engines": {
@@ -63,6 +64,7 @@
     "qa-start": "npm run build && gatsby serve",
     "serve": "gatsby serve",
     "start": "gatsby develop",
+    "test": "tsx test",
     "typecheck": "tsc --noEmit"
   },
   "version": "0.1.0"
