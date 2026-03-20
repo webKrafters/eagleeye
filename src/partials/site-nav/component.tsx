@@ -6,6 +6,7 @@ import BrowserStatus from './with-status/browser';
 import ServerStatus from './with-status/server';
 
 import Anchor from '../anchor';
+import Name from  '../name';
 
 import './style.scss';
 
@@ -33,22 +34,18 @@ const Component : React.FC = () => (
 	<nav className="site-nav">
 		<NavLink to="/">Introduction</NavLink>
 		<NavLink className="group-link" to="/getting-started">Getting Started</NavLink>
-		<NavLinkIndent1 to="/getting-started#create-context-usage">Creating context</NavLinkIndent1>
-		<NavLinkIndent1 to="/getting-started#provider-usage">Setting up the Provider</NavLinkIndent1>
-		<NavLinkIndent1 to="/getting-started#connect-usage">Consuming context { '(' }hoc method{ ')' }</NavLinkIndent1>
-		<NavLinkIndent1 to="/getting-started#usecontext-usage">Consuming context { '(' }hook with memo method{ ')' }</NavLinkIndent1>
-		<NavLink to="/external-access">External Access</NavLink>
+		<NavLinkIndent1 to="/getting-started#create-store">Creating the <Name /> State Manager</NavLinkIndent1>
+		<NavLinkIndent1 to="/getting-started#provider-usage">Accessing the Global Store</NavLinkIndent1>
+		<NavLinkIndent1 to="/getting-started#streaming">Streaming Real-time Changes</NavLinkIndent1>
+		<NavLink to="/global-access">Global Access</NavLink>
 		<NavLink className="group-link" to="/api">API</NavLink>
-		<NavLinkIndent1 to="/api#connect">Connect HoC</NavLinkIndent1>
 		<NavLinkIndent1 to="/api#create-context">CreateContext Function</NavLinkIndent1>
-		<NavLinkIndent1 to="/api#usage-error">UsageError Exception</NavLinkIndent1>
-		<NavLinkIndent1 to="/api#usecontext">UseContext Hook</NavLinkIndent1>
+		<NavLinkIndent1 to="/api#streaming">Using the Change Steam</NavLinkIndent1>
 		<NavLink className="group-link" to="/concepts/client">Concepts</NavLink>
 		<NavLinkIndent1 to="/concepts/client">Client</NavLinkIndent1>
 		<NavLinkIndent1 to="/concepts/prehooks">Prehooks</NavLinkIndent1>
 		<NavLinkIndent1 className="group-link" to="/concepts/property-path">Property Path</NavLinkIndent1>
 		<NavLinkIndent2 to="/concepts/property-path#fullstate-selectorkey"><b>@@STATE</b></NavLinkIndent2>
-		<NavLinkIndent1 to="/concepts/provider">Provider</NavLinkIndent1>
 		<NavLinkIndent1 to="/concepts/selector-map">Selector Map</NavLinkIndent1>
 		<NavLinkIndent1 to="/concepts/storage">Storage</NavLinkIndent1>
 		<NavLinkIndent1 className="group-link" to="/concepts/store">Store</NavLinkIndent1>

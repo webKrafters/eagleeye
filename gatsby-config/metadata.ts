@@ -1,11 +1,13 @@
 import pkgJson from '../package.json';
 
+export const basePkgName = '@webkrafters/eagleeye';
+
 export const NO_SIDER_URI_PATTERN = /^$/; // /^(?:\/(?:quick-start\/?)?(?:\?.*)?)?$/;
 
 export default {
     _24Hours: 8.64e7,
     contact: pkgJson.author.email,
-    copyright: 'This website is a copyright of webKrafters Inc. 2024-Present',
+    copyright: 'This website is a copyrisght of webKrafters Inc. 2024-Present',
     darkmode: {
         defaultValue: true,
         key: 'DKM-G'
@@ -23,8 +25,8 @@ export default {
     title: 'Eagle Eye JS',
     url: {
         demo: 'https://codesandbox.io/s/github/webKrafters/react-observable-context-app',
-        npm: 'https://www.npmjs.com/package/@webkrafters/eagleeye',
-        repo: "https://github.com/webKrafters/eagleeye.js.git",
+        npm: `https://www.npmjs.com/package/${ basePkgName }`,
+        repo: `https://github.com//${ basePkgName.slice( 1 ) }.js.git`,
         site: pkgJson.homepage
     },
     versionOfInterest: {
