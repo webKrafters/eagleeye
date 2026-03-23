@@ -39,7 +39,7 @@ const Component : React.FC = () => (
 		<NavLinkIndent1 to="/getting-started#streaming">Streaming Real-time Changes</NavLinkIndent1>
 		<NavLink to="/global-access">Global Access</NavLink>
 		<NavLink className="group-link" to="/api">API</NavLink>
-		<NavLinkIndent1 to="/api#create-context">CreateContext Function</NavLinkIndent1>
+		<NavLinkIndent1 to="/api#create">CreateEagleEye Function</NavLinkIndent1>
 		<NavLinkIndent1 to="/api#streaming">Using the Change Steam</NavLinkIndent1>
 		<NavLink className="group-link" to="/concepts/client">Concepts</NavLink>
 		<NavLinkIndent1 to="/concepts/client">Client</NavLinkIndent1>

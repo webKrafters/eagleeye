@@ -6,8 +6,13 @@ import ListItem from '../partials/list-item';
 import Name from '../partials/name';
 import Paragraph from '../partials/paragraph';
 
-const RESET_STATE_SAMPLE_v7_0_0 =
-`store.subscribe(
+const SUBSCRIBE_CLOSING_SAMPLE =
+`stateManager.store.subscribe(
+    'closing', ( shutDownReason : string ) => void
+); // => VoidFunction`
+
+const SUBSCRIBE_CHANGE_SAMPLE =
+`stateManager.store.subscribe(
     'data-updated', (
         changes : Changes<State>,
         changedPaths : Array<Array<string>>,
@@ -47,8 +52,11 @@ const ExternalAccessPage : React.FC<{className : string}> = ({ className }) => (
                         <td>Accepts a <b>"data-updated"</b> event type and an observer function for state changes.</td>
                     </tr>
                 </table>
-                <pre>{ RESET_STATE_SAMPLE_v7_0_0 }</pre>
-                <b><u>"data-updated"</u> event listener params</b><br />
+                <b>Context close event subscription</b>
+                <pre>{ SUBSCRIBE_CLOSING_SAMPLE }</pre>
+                <b>Data change event subscription</b>
+                <pre>{ SUBSCRIBE_CHANGE_SAMPLE }</pre>
+                <b>More on <u>"data-updated"</u> event listener params</b><br />
                 <ol>
                     <li><u>changes:</u> an object or array holding the original change request payload(s).</li>
                     <li><u>changedPaths:</u> an array of tokenized property paths belonging to state properties changed during this request.</li>
@@ -60,7 +68,7 @@ const ExternalAccessPage : React.FC<{className : string}> = ({ className }) => (
         <Alert title="Pro Tips">
             <Paragraph>State references are always snapshots of the state at the time of access. In essence, the state returned by <code>stateManager.store.getState(...)</code> are not affected by subsequent updates to the store's state. Any updates to this acquired state never affects the <Name />'s state. So therefore, the <strong>4</strong> considerations:</Paragraph>
             <ListItem><div>use only the <code>stateManager.store.setState(...)</code> to update the <Name /> state manager's internal store.</div></ListItem>
-            <ListItem><div><code>stateManager.store.getState(...)</code> must be used to obtain the current state value.</div></ListItem>
+            <ListItem><div><code>stateManager.store.getState(...)</code> must be used to obtain the current state value. Please rememeber to join this storeManager's <Anchor to="/getting-started/#streaming">change stream</Anchor> instead if real-time store is what you need.</div></ListItem>
             <ListItem><div>use your <code>stateManager.store.subscribe(...)</code> to manually subscribe to state changes and refresh your current state value in real-time.</div></ListItem>
             <ListItem><div>use the <code>unsubscriber</code> returned by your <Name /> instance store's <code>subscribe(...)</code> to unsubscribe from the store when needed.</div></ListItem>
         </Alert>
