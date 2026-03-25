@@ -34,7 +34,7 @@ const Component : React.FC = () => (
 	<nav className="site-nav">
 		<NavLink to="/">Introduction</NavLink>
 		<NavLink className="group-link" to="/getting-started">Getting Started</NavLink>
-		<NavLinkIndent1 to="/getting-started#create-store">Creating the <Name /> State Manager</NavLinkIndent1>
+		<NavLinkIndent1 to="/getting-started#create">Creating the <Name /> State Manager</NavLinkIndent1>
 		<NavLinkIndent1 to="/getting-started#provider-usage">Accessing the Global Store</NavLinkIndent1>
 		<NavLinkIndent1 to="/getting-started#streaming">Streaming Real-time Changes</NavLinkIndent1>
 		<NavLink to="/global-access">Global Access</NavLink>
@@ -48,20 +48,20 @@ const Component : React.FC = () => (
 		<NavLinkIndent2 to="/concepts/property-path#fullstate-selectorkey"><b>@@STATE</b></NavLinkIndent2>
 		<NavLinkIndent1 to="/concepts/selector-map">Selector Map</NavLinkIndent1>
 		<NavLinkIndent1 to="/concepts/storage">Storage</NavLinkIndent1>
-		<NavLinkIndent1 className="group-link" to="/concepts/store">Store</NavLinkIndent1>
-		<NavLinkIndent2 to="/concepts/store/resetstate">Reset State</NavLinkIndent2>
-		<NavLinkIndent2 className="group-link" to="/concepts/store/setstate">Set State</NavLinkIndent2>
-		<NavLinkIndent3 to="/concepts/store/setstate#batched-update">Batched Update</NavLinkIndent3>
-		<NavLinkIndent3 to="/concepts/store/setstate#indexing">Array Indexing</NavLinkIndent3>
-		<NavLinkIndent3 className="group-link" to="/concepts/store/setstate/tags">Using Tag Commands</NavLinkIndent3>
-		<NavLinkIndent4 to="/concepts/store/setstate/tags/clear"><b>@@CLEAR</b> Usage Example</NavLinkIndent4>
-		<NavLinkIndent4 to="/concepts/store/setstate/tags/delete"><b>@@DELETE</b> Usage Example</NavLinkIndent4>
-		<NavLinkIndent4 to="/concepts/store/setstate/tags/move"><b>@@MOVE</b> Usage Example</NavLinkIndent4>
-		<NavLinkIndent4 to="/concepts/store/setstate/tags/push"><b>@@PUSH</b> Usage Example</NavLinkIndent4>
-		<NavLinkIndent4 to="/concepts/store/setstate/tags/replace"><b>@@REPLACE</b> Usage Example</NavLinkIndent4>
-		<NavLinkIndent4 to="/concepts/store/setstate/tags/set"><b>@@SET</b> Usage Example</NavLinkIndent4>
-		<NavLinkIndent4 to="/concepts/store/setstate/tags/splice"><b>@@SPLICE</b> Usage Example</NavLinkIndent4>
-		<NavLinkIndent4 to="/concepts/store/setstate/tags/order-of-operations">Combination Usage Example</NavLinkIndent4>
+		<NavLinkIndent1 className="group-link" to="/concepts/channel">Channel</NavLinkIndent1>
+		<NavLinkIndent2 to="/concepts/channel/resetstate">Reset State</NavLinkIndent2>
+		<NavLinkIndent2 className="group-link" to="/concepts/channel/setstate">Set State</NavLinkIndent2>
+		<NavLinkIndent3 to="/concepts/channel/setstate#batched-update">Batched Update</NavLinkIndent3>
+		<NavLinkIndent3 to="/concepts/channel/setstate#indexing">Array Indexing</NavLinkIndent3>
+		<NavLinkIndent3 className="group-link" to="/concepts/channel/setstate/tags">Using Tag Commands</NavLinkIndent3>
+		<NavLinkIndent4 to="/concepts/channel/setstate/tags/clear"><b>@@CLEAR</b> Usage Example</NavLinkIndent4>
+		<NavLinkIndent4 to="/concepts/channel/setstate/tags/delete"><b>@@DELETE</b> Usage Example</NavLinkIndent4>
+		<NavLinkIndent4 to="/concepts/channel/setstate/tags/move"><b>@@MOVE</b> Usage Example</NavLinkIndent4>
+		<NavLinkIndent4 to="/concepts/channel/setstate/tags/push"><b>@@PUSH</b> Usage Example</NavLinkIndent4>
+		<NavLinkIndent4 to="/concepts/channel/setstate/tags/replace"><b>@@REPLACE</b> Usage Example</NavLinkIndent4>
+		<NavLinkIndent4 to="/concepts/channel/setstate/tags/set"><b>@@SET</b> Usage Example</NavLinkIndent4>
+		<NavLinkIndent4 to="/concepts/channel/setstate/tags/splice"><b>@@SPLICE</b> Usage Example</NavLinkIndent4>
+		<NavLinkIndent4 to="/concepts/channel/setstate/tags/order-of-operations">Combination Usage Example</NavLinkIndent4>
 		<NavLink className="group-link" to="/history/features">What's Changed?</NavLink>
 	</nav>
 );

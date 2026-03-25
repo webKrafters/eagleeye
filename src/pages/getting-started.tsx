@@ -6,7 +6,6 @@ import React from 'react';
 
 import Anchor from '../partials/anchor';
 import CodeBlock from '../partials/code-block';
-import Header from '../partials/segment-header';
 import Name from '../partials/name';
 import NotePad from '../partials/pad/note';
 import Paragraph from '../partials/paragraph';
