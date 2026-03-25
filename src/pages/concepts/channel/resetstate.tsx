@@ -10,7 +10,7 @@ const ConceptChannelResetStatePage : React.FC<{className? : string}> = ({ classN
         <h1><code>{ `channel.resetState` }</code> Usage</h1>
         <NotePad>
             <strong>
-                Wholly applicable to global { `store.resetState` }
+                The following is also wholly applicable to global <code>store.resetState</code>
             </strong>
         </NotePad>
         <p>

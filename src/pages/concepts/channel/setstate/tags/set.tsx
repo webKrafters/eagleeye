@@ -12,7 +12,7 @@ import Paragraph from '../../../../../partials/paragraph';
 import NotePad from '../../../../../partials/pad/note';
 
 const SAMPLE =
-`import { SET_TAG } from '@webkrafters/react-observable-context'; // SET_TAG = "@@SET"
+`import { SET_TAG } from '@webkrafters/eagleeye'; // SET_TAG = "@@SET"
 
 const state = {
     a: { b: [{ x: 7, y: 8, z: 9 }, { x: 17, y: 18, z: 19 }] },
@@ -49,7 +49,7 @@ const ConceptChannelSetStateSetTagPage : React.FC<PageProps> = ({ className }) =
         <h1><code>{ `channel.setState` }</code> @@SET Tag Usage</h1>
         <NotePad>
             <strong>
-                Wholly applicable to global { `store.setState` }
+                The following is also wholly applicable to global <code>store.setState</code>
             </strong>
         </NotePad>
         <strong>Sample 1:</strong>

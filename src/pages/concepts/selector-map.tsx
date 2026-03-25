@@ -27,8 +27,8 @@ const selectorMap = {
     secondFElement: 'd.f[1]'
 };
 
-// will receive the following store data
-store.data = {
+// will receive the following channel data
+channel.data = {
     all: state,
     myData: state.d,
     secondFElement: state.d.f[1]
@@ -39,8 +39,8 @@ store.data = {
 /* --------------------------------------------------- */
 const propertyPaths = [ '@@STATE', 'd', 'd.f[1]' ];
 
-// will receive the following store data
-store.data = {
+// will receive the following channel data
+channel.data = {
     0: state,
     1: state.d,
     2: state.d.f[1]
@@ -51,16 +51,17 @@ const ConceptSelectorMapPage : React.FC<{className? : string}> = ({ className })
         <h1>Selector Map</h1>
         <h3>What is a Selector Map?</h3>
         <Paragraph>A selector map is an object holding key:value pairs used for defining parts of the state to observe and retrieve.</Paragraph>
+        <h4>Array as a Selector Map</h4>
         <Paragraph><i><strong>An array of <Anchor to="/concepts/property-path">property paths</Anchor> is also acceptable:</strong> indexes serve as keys for this purpose.</i></Paragraph>
         <div style={{ paddingLeft: '2.5rem' }}>
             <ListItem>
                 <Paragraph>
-                    <code>key</code> refers to an arbitrary name to be assigned to a given property in the <Anchor to="/concepts/store"><code>store.data</code></Anchor>.
+                    <code>key</code> refers to an arbitrary name to be assigned to a given property in the <Anchor to="/concepts/channel"><code>channel.data</code></Anchor>.
                 </Paragraph>
             </ListItem>
             <ListItem>
                 <Paragraph>
-                    <code>value</code> refers to the <Anchor to="/concepts/property-path">property path</Anchor> leading to a state slice whose value will be assigned to and observed by this <Anchor to="/concepts/store"><code>store.data</code></Anchor> property.
+                    <code>value</code> refers to the <Anchor to="/concepts/property-path">property path</Anchor> leading to a state slice whose value will be assigned to and observed by this <Anchor to="/concepts/channel"><code>channel.data</code></Anchor> property.
                 </Paragraph>
             </ListItem>
             <ListItem>

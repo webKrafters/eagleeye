@@ -10,7 +10,7 @@ import CodeBlock from '../../../../../partials/code-block';
 import NotePad from '../../../../../partials/pad/note';
 
 const SAMPLE =
-`import { REPLACE_TAG } from '@webkrafters/react-observable-context'; // REPLACE_TAG = "@@REPLACE"
+`import { REPLACE_TAG } from '@webkrafters/eagleeye'; // REPLACE_TAG = "@@REPLACE"
 
 const state = {
     a: { b: [{ x: 7, y: 8, z: 9 }, { x: 17, y: 18, z: 19 }] },
@@ -39,7 +39,7 @@ const ConceptChannelSetStateReplaceTagPage : React.FC<PageProps> = ({ className 
         <h1><code>{ `channel.setState` }</code> @@REPLACE Tag Usage</h1>
         <NotePad>
             <strong>
-                Wholly applicable to global { `store.setState` }
+                The following is also wholly applicable to global <code>store.setState</code>
             </strong>
         </NotePad>
         <strong>Sample:</strong>

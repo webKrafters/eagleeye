@@ -3,9 +3,9 @@ import { Props as AnchorProps } from '../../../../../partials/anchor';
 import React from 'react';
 
 import Anchor from '../../../../../partials/anchor';
+import NotePad from '../../../../../partials/pad/note';
 
 import '../../../../../partials/contents/concepts.channel.setstate.tags.page/style.scss';
-import NotePad from '../../../../../partials/pad/note';
 
 const TagLink : React.FC<AnchorProps> = ({ className, ...props }) => (
     <Anchor{ ...props } className={ `tag-link${ className ? ` ${ className }` : '' }` } />
@@ -17,7 +17,7 @@ const ConceptChannelSetStateTagsPage : React.FC<{className? : string}> = ({ clas
         <h1><code>{ `channel.setState` }</code> Tags Commands</h1>
         <NotePad>
             <strong>
-                Wholly applicable to global { `store.setState` }
+                The following is also wholly applicable to global <code>store.setState</code>
             </strong>
         </NotePad>
         <h3>About the set-state tag commands</h3>

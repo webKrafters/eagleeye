@@ -10,7 +10,7 @@ import CodeBlock from '../../../../../partials/code-block';
 import NotePad from '../../../../../partials/pad/note';
 
 const SAMPLE =
-`import { MOVE_TAG } from '@webkrafters/react-observable-context'; // MOVE_TAG = "@@MOVE"
+`import { MOVE_TAG } from '@webkrafters/eagleeye'; // MOVE_TAG = "@@MOVE"
 
 const state = {
     a: { b: [{ x: 7, y: 8, z: 9 }, { x: 17, y: 18, z: 19 }] },
@@ -42,7 +42,7 @@ const ConceptChannelSetStateMoveTagPage : React.FC<PageProps> = ({ className }) 
         <h1><code>{ `channel.setState` }</code> @@MOVE Tag Usage</h1>
         <NotePad>
             <strong>
-                Wholly applicable to global { `store.setState` }
+                The following is also wholly applicable to global <code>store.setState</code>
             </strong>
         </NotePad>
         <strong>Sample:</strong>

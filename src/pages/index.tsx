@@ -65,9 +65,9 @@ const IndexPage : React.FC<Props> = ({ className, data }) => {
 			</Paragraph>
 			<h2><Name />. Why now?</h2>
 			<ul>
-				<li>Auto-immutable update-friendly context class. See <Anchor to="/concepts/store/setstate"><code>store.setState</code></Anchor>.</li>
-				<li>A context bearing an observable consumer <Anchor to="/concepts/store">store</Anchor>.</li>
-				<li>Recognizes <strong>negative array indexing</strong>. Please see <Anchor to="/concepts/property-path">Property Path</Anchor> and <code>store.setState</code> <Anchor to="/concepts/store/setstate#indexing">Indexing</Anchor>.</li>
+				<li>An auto-immutable update friendly state management class. See <Anchor to="/concepts/channel/setstate"><code>channel.setState</code></Anchor> and global <Anchor to="/global-access#external-apis"><code>store.setState</code></Anchor>.</li>
+				<li>A streamable state manager -- automatically notifies <Anchor to="/concepts/client">clients</Anchor> of new changes to the state through manual <Anchor to="/global-access#external-apis">subscription</Anchor> and through <Anchor to="/concepts/channel">change stream channels</Anchor>.</li>
+				<li>Recognizes <strong>negative array indexing</strong>. Please see <Anchor to="/concepts/property-path">Property Path</Anchor> and <code>channel.setState</code> <Anchor to="/concepts/channel/setstate#indexing">Indexing</Anchor>.</li>
 			</ul>
 			<div>May see features history at <Anchor to="/history/features">What's Changed?</Anchor></div>
 		</article>

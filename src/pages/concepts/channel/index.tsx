@@ -6,9 +6,11 @@ import Name from '../../../partials/name';
 const ConceptChannelPage : React.FC<{className? : string}> = ({ className }) => (
     <article className={ `concept-channel-page ${ className }` }>
         <h1>Change Stream Channel</h1>
-        <h3>What is the change stream channel?</h3>
+        <h3>What is a change stream channel?</h3>
         <p>Where an <Name /> <code>store</code> is the client's portal into the context's underlying state, an <Name /> channel is a direct observable real-time store dedicated to monitoring a specific subset of the state.</p>
-        <p>A channel exposes <strong>3</strong> properties for interacting with the store manager. Namely:</p>
+        <h4>Obtaining a channel</h4>
+        <p>Obtain a channel by joining a stream. See how to do this <Anchor to="/getting-started#streaming">here</Anchor>.</p>
+        <p>A channel exposes <strong>3</strong> properties for interacting with the state manager. Namely:</p>
         <p>
             <strong id="data" style={{ marginRight: '0.5rem' }}>1.</strong><strong style={{ marginRight: '0.25rem' }}>data: </strong> 
             which is an object holding resolved state slices as declared in the selector map. <Anchor to="/concepts/selector-map#selector-map-example">See selector map to channel data example here</Anchor>
@@ -34,8 +36,8 @@ const ConceptChannelPage : React.FC<{className? : string}> = ({ className }) => 
             <strong style={{ marginRight: '0.5rem' }}>2.</strong><strong style={{ marginRight: '0.25rem' }}>removeListener: </strong>
             for unsubscribing from <strong>data-changed</strong> and <strong>stream-ending</strong> events of a stream channel.
             <ol>
-                <li><code>('data-changed', subscribed fn ) ={ '>' } void</code></li>
-                <li><code>('stream-ending', subscribed fn ) ={ '>' } void</code></li>
+                <li><code>('data-changed', { '<' }subscribed fn{ '>' }) ={ '>' } void</code></li>
+                <li><code>('stream-ending', { '<' }subscribed fn{ '>' }) ={ '>' } void</code></li>
             </ol>
         </p>
         <p>

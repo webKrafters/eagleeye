@@ -55,7 +55,7 @@ const ConceptChannelSetStatePage : React.FC<{className? : string}> = ({ classNam
         <h1><code>{ `channel.setState` }</code> Usage</h1>
         <NotePad>
             <strong>
-                Wholly applicable to global { `store.setState` }
+                The following is also wholly applicable to global <code>store.setState</code>
             </strong>
         </NotePad>
         <p>
