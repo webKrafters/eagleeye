@@ -26,13 +26,14 @@ export type Props = PageProps<{
 }>;
 
 const IndexPage : React.FC<Props> = ({ className, data }) => {
+	const npm = data?.site.siteMetadata.url.npm as string ?? '';
 	return (
 		<article className={ `index-page ${ className }` }>
 			<h1>Welcome to <Name /> JS!</h1>
 			<Paragraph>
 				<label>
 					<b>Official:{ ' ' }</b>
-					<Anchor to={ data?.site.siteMetadata.url.npm as string }>
+					<Anchor to={ npm }>
 						<Name />
 					</Anchor>
 				</label>
@@ -40,7 +41,7 @@ const IndexPage : React.FC<Props> = ({ className, data }) => {
 			<Paragraph>Framework-agnostic native-javasacript change-stream capable immutable state manager.</Paragraph>
 			<Paragraph>Not logically bound to any section of an application. A single instance may be deployed anywhere within an application as needed.</Paragraph>
 			<Paragraph>Not bound by quantity. As many instances as needed may be created and deployed simultaneously anywhere within an application.</Paragraph>
-			<Paragraph>Supports framework-agnostic state sharing among applications. Simply create an <Anchor to="https://auto-immutable.js.org/intro/">Auto Immutable</Anchor> instance to pass around as the <code>value</code> argument for this or any <Anchor to="/">Eagle Eye</Anchor> based state manager instances.</Paragraph>
+			<Paragraph>Supports framework-agnostic state sharing among applications. Simply create an <Anchor to="https://auto-immutable.js.org/intro/">Auto Immutable</Anchor> instance to pass around as the <code>value</code> argument for this or any <Anchor to="/">Eagle Eye</Anchor> based <Anchor to={ `${ npm }?activeTab=readme#usage` }>state manager</Anchor> instances.</Paragraph>
 			<Paragraph className="installation">
 				<header>Installation:</header>
 				<label>
